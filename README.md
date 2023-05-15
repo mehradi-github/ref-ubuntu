@@ -13,6 +13,7 @@
   - [Installing Pomodoro](#installing-pomodoro)
   - [Fixing error: download is performed unsandboxed as root...](#fixing-error-download-is-performed-unsandboxed-as-root)
   - [Instaling TLP](#instaling-tlp)
+  - [Forwarding all traffic from ssh (sshuttle)](#forwarding-all-traffic-from-ssh-sshuttle)
 
 
 ## Installing Git
@@ -162,4 +163,10 @@ sudo systemctl start tlp
 
 tlp start
 tlp-stat -s -c -b
+```
+
+## Forwarding all traffic from ssh ([sshuttle](https://github.com/sshuttle/sshuttle))
+```sh
+sudo apt install sshuttle
+sudo ssshuttle -r username@sshserver 0/0 --dns
 ```
