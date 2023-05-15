@@ -9,6 +9,7 @@
   - [Installing Microsoft fonts](#installing-microsoft-fonts)
   - [Installing Docker](#installing-docker)
   - [Setting proxy on Docker](#setting-proxy-on-docker)
+  - [Installing Vscode](#installing-vscode)
   - [Installing Bing walpaper](#installing-bing-walpaper)
   - [Installing Pomodoro](#installing-pomodoro)
   - [Fixing error: download is performed unsandboxed as root...](#fixing-error-download-is-performed-unsandboxed-as-root)
@@ -132,6 +133,12 @@ vi ~/.docker/config.json
    }
  }
 }
+```
+
+## Installing Vscode
+Download latest package [vscode](https://code.visualstudio.com/download):
+```sh
+sudo apt install ./code_1.78.0-1683145611_amd64.deb
 ```
 ## Installing Bing walpaper
 ```sh
