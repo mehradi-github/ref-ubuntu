@@ -10,6 +10,7 @@
   - [Installing Docker](#installing-docker)
   - [Installing Bing walpaper](#installing-bing-walpaper)
   - [Installing Pomodoro](#installing-pomodoro)
+  - [Fixing error Download is performed unsandboxed as root...](#fixing-error-download-is-performed-unsandboxed-as-root)
 
 
 ## Installing Git
@@ -120,4 +121,10 @@ sudo snap install bing-wall
 ## Installing Pomodoro
 ```sh
 sudo snap install pomatez
+```
+## Fixing error Download is performed unsandboxed as root...
+```sh
+sudo chown -Rv _apt:root /var/cache/apt/archives/partial/ 
+sudo chmod -Rv 700 /var/cache/apt/archives/partial/
+# sudo apt autoremove
 ```
