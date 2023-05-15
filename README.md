@@ -14,6 +14,7 @@
   - [Fixing error: download is performed unsandboxed as root...](#fixing-error-download-is-performed-unsandboxed-as-root)
   - [Instaling TLP](#instaling-tlp)
   - [Forwarding all traffic from ssh (sshuttle)](#forwarding-all-traffic-from-ssh-sshuttle)
+  - [Installing Minikube](#installing-minikube)
 
 
 ## Installing Git
@@ -168,5 +169,25 @@ tlp-stat -s -c -b
 ## Forwarding all traffic from ssh ([sshuttle](https://github.com/sshuttle/sshuttle))
 ```sh
 sudo apt install sshuttle
-sudo ssshuttle -r username@sshserver 0/0 --dns
+sudo sshuttle -r username@sshserver 0/0 --dns
+```
+
+## Installing [Minikube](https://minikube.sigs.k8s.io/docs/start/)
+
+```sh
+curl -LO https://github.com/kubernetes/minikube/releases/download/v1.30.1/minikube_1.30.1-0_amd64.deb
+sudo apt install minikube_1.30.1-0_amd64.deb
+
+sudo usermod -aG docker $USER && newgrp docker
+
+minikube start --driver=docker
+minikube config set driver docker
+
+
+minikube kubectl -- get po -A
+alias kubectl="minikube kubectl --"
+
+kubectl get po -A
+
+minikube dashboard
 ```
