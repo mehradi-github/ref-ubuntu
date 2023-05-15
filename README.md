@@ -5,10 +5,12 @@
   - [Enabling AppImage Support in Ubuntu](#enabling-appimage-support-in-ubuntu)
   - [Installing Qv2ray](#installing-qv2ray)
   - [Installing V2raya](#installing-v2raya)
+  - [Installing Microsoft fonts](#installing-microsoft-fonts)
 
 
 ## Installing Git
 ```sh 
+sudo apt update && sudo apt upgrade
 sudo apt install git
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
@@ -17,7 +19,6 @@ git config --global user.name "Your Name"
 
 ## Enabling AppImage Support in Ubuntu
 ```sh
-sudo apt update && sudo apt upgrade
 sudo apt install libfuse2
 ```
 
@@ -52,4 +53,10 @@ sudo apt update
 sudo apt install v2raya
 sudo systemctl enable v2raya.service
 sudo systemctl start v2raya.service
+```
+
+## Installing Microsoft fonts
+```sh
+sudo add-apt-repository multiverse
+sudo apt update && sudo apt install ttf-mscorefonts-installer
 ```
