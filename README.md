@@ -8,6 +8,7 @@
   - [Installing V2raya](#installing-v2raya)
   - [Installing Microsoft fonts](#installing-microsoft-fonts)
   - [Installing Docker](#installing-docker)
+  - [Setting proxy on Docker](#setting-proxy-on-docker)
   - [Installing Bing walpaper](#installing-bing-walpaper)
   - [Installing Pomodoro](#installing-pomodoro)
   - [Fixing error: download is performed unsandboxed as root...](#fixing-error-download-is-performed-unsandboxed-as-root)
@@ -114,6 +115,21 @@ echo \
   sudo docker run hello-world
   
 ```
+## Setting proxy on Docker
+```sh
+vi ~/.docker/config.json
+{
+ "proxies": {
+   "default": {
+     "httpProxy": "http://127.0.0.1:8889/",
+     "httpsProxy": "http://127.0.0.1:8889/",
+     "noProxy": "localhost,127.0.0.0/8,::1",
+     "ftpProxy":"http://127.0.0.1:8889/",
+     "allProxy":"socks://127.0.0.1:1089/"
+   }
+ }
+}
+```
 ## Installing Bing walpaper
 ```sh
 sudo snap install bing-wall
@@ -136,7 +152,8 @@ sudo add-apt-repository ppa:linrunner/tlp
 sudo apt update
 sudo apt install tlp tlp-rdw
 
-Edit /etc/tlp.conf (or a config file of your choice under /etc/tlp.d/):
+vi /etc/tlp.conf 
+#(or a config file of your choice under /etc/tlp.d/):
 # example: conservation_mode = 1 > charging stops at 60% | conservation_mode = 0 > the battery gets fully charged (Lenovo Ideapad)
 STOP_CHARGE_THRESH_BAT0="1"
 
