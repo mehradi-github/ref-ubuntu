@@ -10,7 +10,8 @@
   - [Installing Docker](#installing-docker)
   - [Installing Bing walpaper](#installing-bing-walpaper)
   - [Installing Pomodoro](#installing-pomodoro)
-  - [Fixing error Download is performed unsandboxed as root...](#fixing-error-download-is-performed-unsandboxed-as-root)
+  - [Fixing error: download is performed unsandboxed as root...](#fixing-error-download-is-performed-unsandboxed-as-root)
+  - [Instaling TLP](#instaling-tlp)
 
 
 ## Installing Git
@@ -122,9 +123,26 @@ sudo snap install bing-wall
 ```sh
 sudo snap install pomatez
 ```
-## Fixing error Download is performed unsandboxed as root...
+## Fixing error: download is performed unsandboxed as root...
 ```sh
 sudo chown -Rv _apt:root /var/cache/apt/archives/partial/ 
 sudo chmod -Rv 700 /var/cache/apt/archives/partial/
 # sudo apt autoremove
+```
+## Instaling [TLP](https://linrunner.de/tlp/index.html)
+
+```sh
+sudo add-apt-repository ppa:linrunner/tlp
+sudo apt update
+sudo apt install tlp tlp-rdw
+
+Edit /etc/tlp.conf (or a config file of your choice under /etc/tlp.d/):
+# example: conservation_mode = 1 > charging stops at 60% | conservation_mode = 0 > the battery gets fully charged (Lenovo Ideapad)
+STOP_CHARGE_THRESH_BAT0="1"
+
+sudo systemctl enable tlp
+sudo systemctl start tlp
+
+tlp start
+tlp-stat -s -c -b
 ```
