@@ -4,6 +4,7 @@
   - [Installing Git](#installing-git)
   - [Enabling AppImage Support in Ubuntu](#enabling-appimage-support-in-ubuntu)
   - [Installing Qv2ray](#installing-qv2ray)
+  - [Setting proxy on sudo](#setting-proxy-on-sudo)
   - [Installing V2raya](#installing-v2raya)
   - [Installing Microsoft fonts](#installing-microsoft-fonts)
 
@@ -43,6 +44,26 @@ printenv | grep -i proxy
 # ALL_PROXY=socks://127.0.0.1:1089/
 # all_proxy=socks://127.0.0.1:1089/
 ```
+
+## Setting proxy on sudo
+
+```sh
+sudo visudo -f /etc/sudoers.d/NAME
+# Add to file NAME
+Defaults env_keep += "no_proxy http_proxy HTTP_PROXY https_proxy HTTPS_PROXY ftp_proxy FTP_PROXY all_proxy NO_PROXY ALL_PROXY"
+
+. ~/.bashrc
+
+# manual set var
+export all_proxy=socks5://127.0.0.1:20170/ 
+export ALL_PROXY=socks5://127.0.0.1:20170/
+# manual unset var
+unset all_proxy && unset ALL_PROXY
+```
+
+
+
+
 
 ## Installing [V2raya](https://v2raya.org/en/docs/prologue/installation/debian/)
 
