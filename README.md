@@ -8,6 +8,7 @@
   - [Installing V2raya](#installing-v2raya)
   - [Installing Microsoft fonts](#installing-microsoft-fonts)
   - [Installing Docker](#installing-docker)
+  - [Installing Bing walpaper](#installing-bing-walpaper)
 
 
 ## Installing Git
@@ -109,4 +110,8 @@ echo \
   sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
   sudo docker run hello-world
   
+```
+## Installing Bing walpaper
+```sh
+sudo snap install bing-wall
 ```
