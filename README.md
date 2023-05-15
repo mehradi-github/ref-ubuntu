@@ -9,6 +9,7 @@
   - [Installing Microsoft fonts](#installing-microsoft-fonts)
   - [Installing Docker](#installing-docker)
   - [Installing Bing walpaper](#installing-bing-walpaper)
+  - [Installing Pomodoro](#installing-pomodoro)
 
 
 ## Installing Git
@@ -114,4 +115,9 @@ echo \
 ## Installing Bing walpaper
 ```sh
 sudo snap install bing-wall
+```
+
+## Installing Pomodoro
+```sh
+sudo snap install pomatez
 ```
