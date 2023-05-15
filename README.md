@@ -1,22 +1,46 @@
 # Tips to do on fresh install of ubuntu desktop
 
 - [Tips to do on fresh install of ubuntu desktop](#tips-to-do-on-fresh-install-of-ubuntu-desktop)
-  - [Enabling AppImage Support in Ubuntu](#enabling-appimage-support-in-ubuntu)
   - [Installing Git](#installing-git)
+  - [Enabling AppImage Support in Ubuntu](#enabling-appimage-support-in-ubuntu)
+  - [Installing Qv2ray](#installing-qv2ray)
   - [Installing V2raya](#installing-v2raya)
 
 
-## Enabling AppImage Support in Ubuntu
-```sh
-sudo apt update && sudo apt upgrade
-sudo apt install libfuse2
-```
 ## Installing Git
 ```sh 
 sudo apt install git
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 
+```
+
+## Enabling AppImage Support in Ubuntu
+```sh
+sudo apt update && sudo apt upgrade
+sudo apt install libfuse2
+```
+
+## Installing [Qv2ray](https://github.com/Qv2ray/Qv2ray)
+- Download [Qv2ray-v2.7.0-linux-x64.AppImage ](https://github.com/Qv2ray/Qv2ray/releases/download/v2.7.0/Qv2ray-v2.7.0-linux-x64.AppImage). 
+- Download [v2ray](https://github.com/v2fly/v2ray-core) then rename to vcore and place in `~/.config/qv2ray/`.
+- Download [QvPlugin-Trojan](https://github.com/Qv2ray/QvPlugin-Trojan/releases) and place in ` ~/.config/qv2ray/plugins `.
+
+```sh
+sudo chmod u+x Qv2ray-v2.7.0-linux-x64.AppImage
+./Qv2ray-v2.7.0-linux-x64.AppImage
+
+printenv | grep -i proxy
+# no_proxy=localhost,127.0.0.0/8,::1
+# ftp_proxy=http://127.0.0.1:8889/
+# https_proxy=http://127.0.0.1:8889/
+# NO_PROXY=localhost,127.0.0.0/8,::1
+# FTP_PROXY=http://127.0.0.1:8889/
+# HTTPS_PROXY=http://127.0.0.1:8889/
+# HTTP_PROXY=http://127.0.0.1:8889/
+# http_proxy=http://127.0.0.1:8889/
+# ALL_PROXY=socks://127.0.0.1:1089/
+# all_proxy=socks://127.0.0.1:1089/
 ```
 
 ## Installing [V2raya](https://v2raya.org/en/docs/prologue/installation/debian/)
