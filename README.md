@@ -7,6 +7,7 @@
   - [Setting proxy on sudo](#setting-proxy-on-sudo)
   - [Installing V2raya](#installing-v2raya)
   - [Installing Microsoft fonts](#installing-microsoft-fonts)
+  - [Installing Docker](#installing-docker)
 
 
 ## Installing Git
@@ -50,7 +51,7 @@ printenv | grep -i proxy
 ```sh
 sudo visudo -f /etc/sudoers.d/NAME
 # Add to file NAME
-Defaults env_keep += "no_proxy http_proxy HTTP_PROXY https_proxy HTTPS_PROXY ftp_proxy FTP_PROXY all_proxy NO_PROXY ALL_PROXY"
+Defaults env_keep += "no_proxy NO_PROXY http_proxy HTTP_PROXY https_proxy HTTPS_PROXY ftp_proxy FTP_PROXY all_proxy ALL_PROXY"
 
 . ~/.bashrc
 
@@ -80,4 +81,32 @@ sudo systemctl start v2raya.service
 ```sh
 sudo add-apt-repository multiverse
 sudo apt update && sudo apt install ttf-mscorefonts-installer
+```
+
+## Installing [Docker](https://docs.docker.com/engine/install/ubuntu/)
+
+
+```sh
+# Install packages to allow apt to use a repository over HTTPS
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg
+
+# Add Docker’s official GPG key
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+#set up the repository
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  
+  sudo apt-get update
+  
+  # Install Docker Engine, containerd, and Docker Compose.
+  
+  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  sudo docker run hello-world
+  
 ```
