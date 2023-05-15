@@ -15,6 +15,7 @@
   - [Instaling TLP](#instaling-tlp)
   - [Forwarding all traffic from ssh (sshuttle)](#forwarding-all-traffic-from-ssh-sshuttle)
   - [Installing Minikube](#installing-minikube)
+    - [Minikube delete all cache](#minikube-delete-all-cache)
 
 
 ## Installing Git
@@ -190,4 +191,9 @@ alias kubectl="minikube kubectl --"
 kubectl get po -A
 
 minikube dashboard
+```
+### Minikube delete all cache
+```sh
+minikube delete --purge
+minikube start --driver=docker
 ```
