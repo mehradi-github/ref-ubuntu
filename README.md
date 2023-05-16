@@ -17,6 +17,7 @@
   - [Forwarding all traffic from ssh (sshuttle)](#forwarding-all-traffic-from-ssh-sshuttle)
   - [Installing Minikube](#installing-minikube)
     - [Minikube delete all cache](#minikube-delete-all-cache)
+  - [system info script](#system-info-script)
 
 
 ## Installing Git
@@ -204,4 +205,11 @@ minikube dashboard
 ```sh
 minikube delete --purge
 minikube start --driver=docker
+```
+
+## system info script
+```sh
+sudo apt install neofetch
+whatis neofetch
+neofetch
 ```
