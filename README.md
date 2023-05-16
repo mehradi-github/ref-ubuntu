@@ -193,7 +193,8 @@ minikube config set driver docker
 
 
 minikube kubectl -- get po -A
-alias kubectl="minikube kubectl --"
+echo "alias kubectl='minikube kubectl --'" >> ~/.bash_aliases
+source ~/.bashrc
 
 kubectl get po -A
 
