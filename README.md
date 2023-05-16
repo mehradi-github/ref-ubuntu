@@ -214,8 +214,20 @@ kubectl get services hello-minikube
 kubectl describe service hello-minikube
 
 minikube service hello-minikube
+
+kubectl get deployments
+kubectl describe deployment hello-minikube
+kubectl rollout restart deployment hello-minikube
+kubectl delete deployment hello-minikube
+
 # http://localhost:7080/
 kubectl port-forward service/hello-minikube 7080:8080
+
+
+# LoadBalancer
+
+
+
 
 
 
