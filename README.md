@@ -16,7 +16,6 @@
   - [Instaling TLP](#instaling-tlp)
   - [Forwarding all traffic from ssh (sshuttle)](#forwarding-all-traffic-from-ssh-sshuttle)
   - [Installing Minikube](#installing-minikube)
-    - [Minikube delete all cache](#minikube-delete-all-cache)
 
 
 ## Installing Git
@@ -199,9 +198,11 @@ source ~/.bashrc
 kubectl get po -A
 
 minikube dashboard
-```
-### Minikube delete all cache
-```sh
+
+# Some dashboard features require the metrics-server addon.
+minikube addons enable metrics-server
+
+# Minikube delete all cache
 minikube delete --all
 minikube delete --purge
 ```
