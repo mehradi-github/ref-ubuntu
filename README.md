@@ -202,7 +202,18 @@ minikube dashboard
 # Some dashboard features require the metrics-server addon.
 minikube addons enable metrics-server
 
-# Minikube delete all cache
+# Manage cluster
+
+minikube pause
+minikube unpause
+minikube stop
+
+minikube config set memory 9001
+
+minikube addons list
+
+# Delete all of the minikube clusters:
 minikube delete --all
+
 minikube delete --purge
 ```
