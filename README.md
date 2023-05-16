@@ -202,6 +202,26 @@ minikube dashboard
 # Some dashboard features require the metrics-server addon.
 minikube addons enable metrics-server
 
+
+
+# Deploy applications
+
+# Service
+kubectl create deployment hello-minikube --image=kicbase/echo-server:1.0
+kubectl expose deployment hello-minikube --type=NodePort --port=8080
+
+kubectl get services hello-minikube
+kubectl describe service hello-minikube
+
+minikube service hello-minikube
+# http://localhost:7080/
+kubectl port-forward service/hello-minikube 7080:8080
+
+
+
+
+
+
 # Manage cluster
 
 minikube pause
