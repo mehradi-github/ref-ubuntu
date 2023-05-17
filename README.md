@@ -230,7 +230,6 @@ kubectl get services balanced
 # <EXTERNAL-IP>:8080
 minikube tunnel
 
-
 # Ingress
 minikube addons enable ingress
 kubectl apply -f ingress-example.yaml
@@ -240,23 +239,7 @@ minikube tunnel
 curl 127.0.0.1/foo
 curl 127.0.0.1/bar
 
-
-
-
-
-
-# LoadBalancer
-
-
-
-
-
-
-
-
-
 # Manage cluster
-
 minikube pause
 minikube unpause
 minikube stop
