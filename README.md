@@ -206,22 +206,43 @@ minikube addons enable metrics-server
 
 # Deploy applications
 
-# Service
+# Type services [Cluster IP, Node Port, Load Balancer, External Name]
+
 kubectl create deployment hello-minikube --image=kicbase/echo-server:1.0
-kubectl expose deployment hello-minikube --type=NodePort --port=8080
-
-kubectl get services hello-minikube
-kubectl describe service hello-minikube
-
-minikube service hello-minikube
-
 kubectl get deployments
 kubectl describe deployment hello-minikube
 kubectl rollout restart deployment hello-minikube
 kubectl delete deployment hello-minikube
 
+# Service (Node Port)
+kubectl expose deployment hello-minikube --type=NodePort --port=8080
+kubectl get services hello-minikube
+kubectl describe service hello-minikube
+minikube service hello-minikube
+
 # http://localhost:7080/
 kubectl port-forward service/hello-minikube 7080:8080
+
+kubectl create deployment balanced --image=kicbase/echo-server:1.0
+# Service (Load Balancer)
+kubectl expose deployment balanced --type=LoadBalancer --port=8080
+kubectl get services balanced
+# <EXTERNAL-IP>:8080
+minikube tunnel
+
+
+# Ingress
+minikube addons enable ingress
+kubectl apply -f ingress-example.yaml
+kubectl get ingress
+# verify that the ingress works
+minikube tunnel
+curl 127.0.0.1/foo
+curl 127.0.0.1/bar
+
+
+
+
 
 
 # LoadBalancer
