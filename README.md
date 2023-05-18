@@ -285,4 +285,10 @@ echo "alias kubectl='microk8s kubectl'" >> ~/.bash_aliases && source ~/.bashrc
 microk8s kubectl get nodes
 microk8s kubectl get services
 
+# Use [add-ons](https://microk8s.io/docs/addons#heading--list)
+microk8s enable dns
+microk8s enable hostpath-storage
+
+
+
 ```
