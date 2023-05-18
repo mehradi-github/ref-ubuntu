@@ -289,6 +289,7 @@ microk8s kubectl get services
 microk8s enable dns
 microk8s enable hostpath-storage
 
-
-
+# Starting and Stopping MicroK8s
+microk8s stop
+microk8s start
 ```
