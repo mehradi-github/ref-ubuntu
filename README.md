@@ -270,4 +270,7 @@ su - $USER
 
 # Checking the status
 microk8s status --wait-ready
+# Adding alias kubectl
+echo "alias kubectl='microk8s kubectl'" >> ~/.bash_aliases && source ~/.bashrc
+
 ```
