@@ -262,4 +262,10 @@ minikube delete --purge
 # Installing MicroK8s
 sudo snap install microk8s --classic --channel=1.27
 
+# Adding current user to the group and gain access to the .kube caching directory
+sudo usermod -a -G microk8s $USER
+sudo chown -f -R $USER ~/.kube
+#re-enter the session for the group update to take place
+su - $USER
+
 ```
