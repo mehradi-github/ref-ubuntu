@@ -16,6 +16,7 @@
   - [Instaling TLP](#instaling-tlp)
   - [Forwarding all traffic from ssh (sshuttle)](#forwarding-all-traffic-from-ssh-sshuttle)
   - [Installing Minikube](#installing-minikube)
+  - [Installing MicroK8s](#installing-microk8s)
 
 
 ## Installing Git
@@ -252,4 +253,13 @@ minikube addons list
 minikube delete --all
 
 minikube delete --purge
+```
+
+
+## Installing [MicroK8s](https://microk8s.io/docs/getting-started) 
+
+```sh
+# Installing MicroK8s
+sudo snap install microk8s --classic --channel=1.27
+
 ```
