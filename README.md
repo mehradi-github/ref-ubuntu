@@ -10,7 +10,7 @@
   - [Installing Docker](#installing-docker)
   - [Setting proxy on Docker](#setting-proxy-on-docker)
   - [Installing Vscode](#installing-vscode)
-  - [Installing Bing walpaper](#installing-bing-walpaper)
+  - [Installing Bing wallpaper](#installing-bing-wallpaper)
   - [Installing Pomodoro](#installing-pomodoro)
   - [Fixing error: download is performed unsandboxed as root...](#fixing-error-download-is-performed-unsandboxed-as-root)
   - [Instaling TLP](#instaling-tlp)
@@ -140,7 +140,7 @@ Download latest package [vscode](https://code.visualstudio.com/download):
 ```sh
 sudo apt install ./code_1.78.0-1683145611_amd64.deb
 ```
-## Installing Bing walpaper
+## Installing Bing wallpaper
 ```sh
 sudo snap install bing-wall
 ```
@@ -292,4 +292,10 @@ microk8s enable hostpath-storage
 # Starting and Stopping MicroK8s
 microk8s stop
 microk8s start
+
+# Enabling traffic forwarding with:
+sudo iptables -P FORWARD ACCEPT
+# The change can be made persistent with: 
+sudo apt-get install iptables-persistent
+
 ```
