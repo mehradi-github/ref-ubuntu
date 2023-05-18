@@ -268,4 +268,6 @@ sudo chown -f -R $USER ~/.kube
 #re-enter the session for the group update to take place
 su - $USER
 
+# Checking the status
+microk8s status --wait-ready
 ```
