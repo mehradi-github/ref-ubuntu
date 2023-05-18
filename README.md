@@ -270,7 +270,19 @@ su - $USER
 
 # Checking the status
 microk8s status --wait-ready
+
+# WARNING:  Docker is installed. 
+sudo vi /etc/docker/daemon.json
+{
+    "insecure-registries" : ["localhost:32000"] 
+}
+
+
 # Adding alias kubectl
 echo "alias kubectl='microk8s kubectl'" >> ~/.bash_aliases && source ~/.bashrc
+
+# Access Kubernetes
+microk8s kubectl get nodes
+microk8s kubectl get services
 
 ```
