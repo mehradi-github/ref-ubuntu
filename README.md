@@ -3,6 +3,7 @@
 - [Tips to do on fresh install of ubuntu desktop](#tips-to-do-on-fresh-install-of-ubuntu-desktop)
   - [Installing Git](#installing-git)
   - [Enabling AppImage Support in Ubuntu](#enabling-appimage-support-in-ubuntu)
+  - [Installing rar/unrar](#installing-rarunrar)
   - [Installing Qv2ray](#installing-qv2ray)
   - [Setting proxy on sudo](#setting-proxy-on-sudo)
   - [Installing V2raya](#installing-v2raya)
@@ -17,6 +18,7 @@
   - [Forwarding all traffic from ssh (sshuttle)](#forwarding-all-traffic-from-ssh-sshuttle)
   - [Installing Minikube](#installing-minikube)
   - [Installing MicroK8s](#installing-microk8s)
+  - [Install inside virtual environment:](#install-inside-virtual-environment)
 
 
 ## Installing Git
@@ -32,7 +34,30 @@ git config --global user.name "Your Name"
 ```sh
 sudo apt install libfuse2
 ```
+## Installing rar/unrar
+```sh
+sudo apt install rar unrar
 
+# Creating RAR Files with setting password
+rar a -p filename.rar filename1
+rar a -p dir.rar dir1
+
+
+
+# Extract a .rar extension file in specific path 
+unrar  e filename.rar /home/
+
+# Extract a .rar extension file in their original directory
+unrar x filename.rar
+
+# Testing a RAR File
+unrar t filename.rar
+
+# More Details
+man unrar
+man rar
+
+```
 ## Installing [Qv2ray](https://github.com/Qv2ray/Qv2ray)
 - Download [Qv2ray-v2.7.0-linux-x64.AppImage ](https://github.com/Qv2ray/Qv2ray/releases/download/v2.7.0/Qv2ray-v2.7.0-linux-x64.AppImage). 
 - Download [v2ray](https://github.com/v2fly/v2ray-core) then rename to vcore and place in `~/.config/qv2ray/`.
@@ -299,3 +324,9 @@ sudo iptables -P FORWARD ACCEPT
 sudo apt-get install iptables-persistent
 
 ```
+
+## Install inside virtual environment:
+1. cd DIR
+2. pipenv install (installs virtual environment and all necessary dependencies from Pipfile).
+3. pipenv shell (enter virtual environment).
+4. pip install -e . (to install).
