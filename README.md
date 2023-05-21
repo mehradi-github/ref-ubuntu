@@ -19,6 +19,7 @@
   - [Installing Minikube](#installing-minikube)
   - [Installing MicroK8s](#installing-microk8s)
   - [Install inside virtual environment:](#install-inside-virtual-environment)
+  - [Installing Brave browser](#installing-brave-browser)
 
 
 ## Installing Git
@@ -330,3 +331,16 @@ sudo apt-get install iptables-persistent
 2. pipenv install (installs virtual environment and all necessary dependencies from Pipfile).
 3. pipenv shell (enter virtual environment).
 4. pip install -e . (to install).
+
+## Installing Brave browser
+```sh
+sudo apt install curl
+
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+sudo apt update
+
+sudo apt install brave-browser
+```
