@@ -20,6 +20,7 @@
   - [Installing MicroK8s](#installing-microk8s)
   - [Install inside virtual environment:](#install-inside-virtual-environment)
   - [Installing Brave browser](#installing-brave-browser)
+  - [Installing Node.js LTS via binary archive](#installing-nodejs-lts-via-binary-archive)
 
 
 ## Installing Git
@@ -343,4 +344,17 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] http
 sudo apt update
 
 sudo apt install brave-browser
+```
+## Installing Node.js LTS via binary archive
+Download the NodeJS : [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+
+```sh
+curl -fsSLO https://nodejs.org/dist/v18.16.0/node-v18.16.0-linux-x64.tar.xz
+tar -xJvf node-v18.16.0-linux-x64.tar.xz
+sudo mkdir -p /usr/local/lib/node/v18.16.0
+sudo mv ./node-v18.16.0-linux-x64/{lib,share,include,bin} /usr/local/lib/node/v18.16.0
+echo "export PATH=/usr/local/lib/node/v18.16.0/bin:$PATH" >> ~/.bash_profile
+source ~/.bash_profile
+node -v
+npm version
 ```
