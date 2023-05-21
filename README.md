@@ -353,6 +353,14 @@ curl -fsSLO https://nodejs.org/dist/v18.16.0/node-v18.16.0-linux-x64.tar.xz
 tar -xJvf node-v18.16.0-linux-x64.tar.xz
 sudo mkdir -p /usr/local/lib/node/v18.16.0
 sudo mv ./node-v18.16.0-linux-x64/{lib,share,include,bin} /usr/local/lib/node/v18.16.0
+
+# Checking ~/.bashrc 
+cat <<EOF >> ~/.bashrc
+if [ -f ~/.bash_profile ]; then
+    . ~/.bash_profile
+fi
+EOF
+
 echo "export PATH=/usr/local/lib/node/v18.16.0/bin:$PATH" >> ~/.bash_profile
 source ~/.bash_profile
 node -v
