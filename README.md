@@ -351,9 +351,14 @@ Download the NodeJS : [https://nodejs.org/en/download/](https://nodejs.org/en/do
 ```sh
 curl -fsSLO https://nodejs.org/dist/v18.16.0/node-v18.16.0-linux-x64.tar.xz
 tar -xJvf node-v18.16.0-linux-x64.tar.xz
+
+# --- The First method
+sudo cp -r ./node-v18.16.0-linux-x64/{lib,share,include,bin} /usr
+
+
+# --- The second method
 sudo mkdir -p /usr/local/lib/node/v18.16.0
 sudo mv ./node-v18.16.0-linux-x64/{lib,share,include,bin} /usr/local/lib/node/v18.16.0
-
 # Checking ~/.bashrc 
 cat <<EOF >> ~/.bashrc
 if [ -f ~/.bash_profile ]; then
@@ -363,6 +368,9 @@ EOF
 
 echo "export PATH=/usr/local/lib/node/v18.16.0/bin:$PATH" >> ~/.bash_profile
 source ~/.bash_profile
+# ---
+
+
 node -v
 npm version
 ```
