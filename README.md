@@ -379,4 +379,12 @@ npm version
 ```sh
 # Copy just structure folders
 rsync -av -f"+ */" --exclude={'*.srt','*.mp4'} "$SRC" "$DEST"
+# Adding specific folder in subforlders (leve 1)
+cd "$DESTF"
+for f in */
+do
+  if [ -d "$f" ]; then
+    mkdir -p "./${f}img"
+  fi
+done
 ```
