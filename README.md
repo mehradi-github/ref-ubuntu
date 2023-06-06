@@ -21,6 +21,7 @@
   - [Install inside virtual environment:](#install-inside-virtual-environment)
   - [Installing Brave browser](#installing-brave-browser)
   - [Installing Node.js LTS via binary archive](#installing-nodejs-lts-via-binary-archive)
+  - [Tips](#tips)
 
 
 ## Installing Git
@@ -373,4 +374,9 @@ source ~/.bash_profile
 
 node -v
 npm version
+```
+## Tips 
+```sh
+# Copy just structure folders
+rsync -av -f"+ */" --exclude={'*.srt','*.mp4'} "$SRC" "$DEST"
 ```
