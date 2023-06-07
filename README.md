@@ -390,4 +390,9 @@ done
 
 # How to check gtk version in ubuntu linux
 gtk-launch --version
+# How do I find the version of bash
+echo "${BASH_VERSION}"
+bash --version
+Ctrl+x Ctrl+v
+
 ```
