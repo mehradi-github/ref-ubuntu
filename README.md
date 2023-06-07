@@ -387,4 +387,7 @@ do
     mkdir -p "./${f}img"
   fi
 done
+
+# How to check gtk version in ubuntu linux
+gtk-launch --version
 ```
