@@ -402,4 +402,6 @@ Ctrl+x Ctrl+v
 ```sh
 sudo apt install gnome-shell-extensions gnome-tweaks
 # launch the Tweaks app and change the GS theme from the “Appearance” tab
+mkdir -p ~/.themes/mytheme/gnome-shell/
+touch ~/.themes/mytheme/gnome-shell/gnome-shell.css
 ```
