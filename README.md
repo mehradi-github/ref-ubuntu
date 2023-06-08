@@ -22,6 +22,7 @@
   - [Installing Brave browser](#installing-brave-browser)
   - [Installing Node.js LTS via binary archive](#installing-nodejs-lts-via-binary-archive)
   - [Tips](#tips)
+  - [Modifing style properties of GNOME Shell themes](#modifing-style-properties-of-gnome-shell-themes)
 
 
 ## Installing Git
@@ -395,4 +396,9 @@ echo "${BASH_VERSION}"
 bash --version
 Ctrl+x Ctrl+v
 
+```
+
+## Modifing style properties of GNOME Shell themes
+```sh
+sudo apt install gnome-shell-extensions gnome-tweaks
 ```
