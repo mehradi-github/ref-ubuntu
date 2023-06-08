@@ -23,6 +23,7 @@
   - [Installing Node.js LTS via binary archive](#installing-nodejs-lts-via-binary-archive)
   - [Tips](#tips)
   - [Modifing style properties of GNOME Shell themes](#modifing-style-properties-of-gnome-shell-themes)
+    - [Generating custom theme and changing panel background color](#generating-custom-theme-and-changing-panel-background-color)
     - [Extracting original CSS file as a reference](#extracting-original-css-file-as-a-reference)
 
 
@@ -402,10 +403,11 @@ Ctrl+x Ctrl+v
 ## Modifing style properties of GNOME Shell themes
 ```sh
 sudo apt install gnome-shell-extensions gnome-tweaks
+```
+### Generating custom theme and changing panel background color
+```sh
 mkdir -p ~/.themes/mytheme/gnome-shell/
-touch ~/.themes/mytheme/gnome-shell/gnome-shell.css
-# Changing panel background color
-echo "#panel {background-color: red;}" >> ~/.themes/mytheme/gnome-shell/gnome-shell.css
+echo "#panel {background-color: red;}" > ~/.themes/mytheme/gnome-shell/gnome-shell.css
 # Launch the Tweaks app and change the GS theme from the “Appearance” tab to Mytheme
 # Reload the GNOME shell: <ALT+F2> and input “r” 
 ```
