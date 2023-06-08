@@ -404,15 +404,15 @@ Ctrl+x Ctrl+v
 sudo apt install gnome-shell-extensions gnome-tweaks
 mkdir -p ~/.themes/mytheme/gnome-shell/
 touch ~/.themes/mytheme/gnome-shell/gnome-shell.css
-
-# launch the Tweaks app and change the GS theme from the “Appearance” tab to Mytheme
-# reload the GNOME shell: <ALT+F2> and input “r” 
-# default system GS theme located at the “/usr/share/gnome-shell/theme” path
+# Changing panel background color
+echo "#panel {background-color: red;}" >> ~/.themes/mytheme/gnome-shell/gnome-shell.css
+# Launch the Tweaks app and change the GS theme from the “Appearance” tab to Mytheme
+# Reload the GNOME shell: <ALT+F2> and input “r” 
 ```
 ### Extracting original CSS file as a reference
 ```sh
+# default system GS theme located at the “/usr/share/gnome-shell/theme” path
 cd /usr/share/gnome-shell/theme/Yaru
 gresource list gnome-shell-theme.gresource
 gresource extract gnome-shell-theme.gresource /org/gnome/shell/theme/Yaru/gnome-shell-dark.css > output.css
-
 ```
