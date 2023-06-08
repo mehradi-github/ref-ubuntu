@@ -401,4 +401,5 @@ Ctrl+x Ctrl+v
 ## Modifing style properties of GNOME Shell themes
 ```sh
 sudo apt install gnome-shell-extensions gnome-tweaks
+# launch the Tweaks app and change the GS theme from the “Appearance” tab
 ```
