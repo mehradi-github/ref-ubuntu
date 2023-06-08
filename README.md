@@ -23,6 +23,7 @@
   - [Installing Node.js LTS via binary archive](#installing-nodejs-lts-via-binary-archive)
   - [Tips](#tips)
   - [Modifing style properties of GNOME Shell themes](#modifing-style-properties-of-gnome-shell-themes)
+    - [Extracting original CSS file as a reference](#extracting-original-css-file-as-a-reference)
 
 
 ## Installing Git
@@ -403,7 +404,15 @@ Ctrl+x Ctrl+v
 sudo apt install gnome-shell-extensions gnome-tweaks
 mkdir -p ~/.themes/mytheme/gnome-shell/
 touch ~/.themes/mytheme/gnome-shell/gnome-shell.css
+
 # launch the Tweaks app and change the GS theme from the “Appearance” tab to Mytheme
 # reload the GNOME shell: <ALT+F2> and input “r” 
+# default system GS theme located at the “/usr/share/gnome-shell/theme” path
+```
+### Extracting original CSS file as a reference
+```sh
+cd /usr/share/gnome-shell/theme/Yaru
+gresource list gnome-shell-theme.gresource
+gresource extract gnome-shell-theme.gresource /org/gnome/shell/theme/Yaru/gnome-shell-dark.css > output.css
 
 ```
