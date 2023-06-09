@@ -26,6 +26,7 @@
     - [Generating custom theme and changing panel background color](#generating-custom-theme-and-changing-panel-background-color)
     - [Extracting original CSS file as a reference](#extracting-original-css-file-as-a-reference)
   - [Zsh](#zsh)
+    - [Oh my zsh](#oh-my-zsh)
 
 
 ## Installing Git
@@ -420,11 +421,19 @@ gresource list gnome-shell-theme.gresource
 gresource extract gnome-shell-theme.gresource /org/gnome/shell/theme/Yaru/gnome-shell-dark.css > output.css
 ```
 ## Zsh
+
+
 ```sh
 # Install Zsh
 sudo apt install zsh
 zsh
-# Oh my zsh
+```
+### Oh my zsh 
+[Oh My Zsh](https://ohmyz.sh/#install) is a delightful, open source, community-driven framework for managing your Zsh configuration. It comes bundled with thousands of helpful functions, helpers, plugins, themes, and a few things that make you shout...
+
+All the current [themes](https://github.com/ohmyzsh/ohmyzsh/wiki/themes) can be found in the themes/ directory in the Oh My Zsh distribution. [See list here](https://github.com/robbyrussell/oh-my-zsh/tree/master/themes/).
+```sh
+# ~/.zshrc
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Change your default shell to zsh
