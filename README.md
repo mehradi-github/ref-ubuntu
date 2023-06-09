@@ -25,6 +25,7 @@
   - [Modifing style properties of GNOME Shell themes](#modifing-style-properties-of-gnome-shell-themes)
     - [Generating custom theme and changing panel background color](#generating-custom-theme-and-changing-panel-background-color)
     - [Extracting original CSS file as a reference](#extracting-original-css-file-as-a-reference)
+  - [Zsh](#zsh)
 
 
 ## Installing Git
@@ -417,4 +418,8 @@ echo "#panel {background-color: red;}" > ~/.themes/mytheme/gnome-shell/gnome-she
 cd /usr/share/gnome-shell/theme/Yaru
 gresource list gnome-shell-theme.gresource
 gresource extract gnome-shell-theme.gresource /org/gnome/shell/theme/Yaru/gnome-shell-dark.css > output.css
+```
+## Zsh
+```sh
+sudo apt install zsh
 ```
