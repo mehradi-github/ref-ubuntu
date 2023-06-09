@@ -423,6 +423,10 @@ gresource extract gnome-shell-theme.gresource /org/gnome/shell/theme/Yaru/gnome-
 ```sh
 # Install Zsh
 sudo apt install zsh
+zsh
 # Oh my zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Change your default shell to zsh
+chsh -s /usr/bin/zsh
 ```
