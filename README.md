@@ -421,7 +421,7 @@ gresource list gnome-shell-theme.gresource
 gresource extract gnome-shell-theme.gresource /org/gnome/shell/theme/Yaru/gnome-shell-dark.css > output.css
 ```
 ## Zsh
-
+[Zsh](https://www.zsh.org/) is a shell designed for interactive use, although it is also a powerful scripting language.
 
 ```sh
 # Install Zsh
