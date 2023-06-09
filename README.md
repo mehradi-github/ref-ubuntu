@@ -421,5 +421,8 @@ gresource extract gnome-shell-theme.gresource /org/gnome/shell/theme/Yaru/gnome-
 ```
 ## Zsh
 ```sh
+# Install Zsh
 sudo apt install zsh
+# Oh my zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
