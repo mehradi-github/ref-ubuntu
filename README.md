@@ -435,7 +435,8 @@ All the current [themes](https://github.com/ohmyzsh/ohmyzsh/wiki/themes) can be 
 ```sh
 # ~/.zshrc
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
+# echo current shell
+echo $SHELL
 # Set zsh as your default shell
 chsh -s $(which zsh)
 
