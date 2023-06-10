@@ -440,8 +440,8 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 chsh -s $(which zsh)
 
 open ~/.zshrc
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+# The list of plugins: "~/.oh-my-zsh/plugins". Each plugin directory has a README file explaining what the plugin does. 
+plugins=(rails git textmate ruby lighthouse)
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 # Apply your changes
