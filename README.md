@@ -439,5 +439,11 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 # Set zsh as your default shell
 chsh -s $(which zsh)
 
-
+open ~/.zshrc
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git)
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+# Apply your changes
+source ~/.zshrc
 ```
