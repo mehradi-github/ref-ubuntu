@@ -71,8 +71,10 @@ man rar
 ```sh
 sudo apt install zip unzip
 
+#Adding multiple files and directories in the same archive
 zip -r archivename.zip directory_name1 directory_name2 file1 file1
-
+# Creating a password protected ZIP file
+zip -e  archivename.zip directory_name
 ```
 ## Installing [Qv2ray](https://github.com/Qv2ray/Qv2ray)
 - Download [Qv2ray-v2.7.0-linux-x64.AppImage ](https://github.com/Qv2ray/Qv2ray/releases/download/v2.7.0/Qv2ray-v2.7.0-linux-x64.AppImage). 
