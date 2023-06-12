@@ -70,6 +70,9 @@ man rar
 ## Installing zip/unzip
 ```sh
 sudo apt install zip unzip
+
+zip -r archivename.zip directory_name1 directory_name2 file1 file1
+
 ```
 ## Installing [Qv2ray](https://github.com/Qv2ray/Qv2ray)
 - Download [Qv2ray-v2.7.0-linux-x64.AppImage ](https://github.com/Qv2ray/Qv2ray/releases/download/v2.7.0/Qv2ray-v2.7.0-linux-x64.AppImage). 
