@@ -4,6 +4,7 @@
   - [Installing Git](#installing-git)
   - [Enabling AppImage Support in Ubuntu](#enabling-appimage-support-in-ubuntu)
   - [Installing rar/unrar](#installing-rarunrar)
+  - [Installing zip/unzip](#installing-zipunzip)
   - [Installing Qv2ray](#installing-qv2ray)
   - [Setting proxy on sudo](#setting-proxy-on-sudo)
   - [Installing V2raya](#installing-v2raya)
@@ -65,6 +66,10 @@ unrar t filename.rar
 man unrar
 man rar
 
+```
+## Installing zip/unzip
+```sh
+sudo apt install zip unzip
 ```
 ## Installing [Qv2ray](https://github.com/Qv2ray/Qv2ray)
 - Download [Qv2ray-v2.7.0-linux-x64.AppImage ](https://github.com/Qv2ray/Qv2ray/releases/download/v2.7.0/Qv2ray-v2.7.0-linux-x64.AppImage). 
