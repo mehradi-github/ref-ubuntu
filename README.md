@@ -85,6 +85,8 @@ unzip -P PasswOrd filename.zip -d /path/to/directory
 ## Installing tar
 ```sh
 sudo apt install tar
+# Compress Files
+tar -czvf logs_archive.tar.gz *
 ```
 
 ## Installing [Qv2ray](https://github.com/Qv2ray/Qv2ray)
