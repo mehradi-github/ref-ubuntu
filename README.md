@@ -5,6 +5,7 @@
   - [Enabling AppImage Support in Ubuntu](#enabling-appimage-support-in-ubuntu)
   - [Installing rar/unrar](#installing-rarunrar)
   - [Installing zip/unzip](#installing-zipunzip)
+  - [Installing tar](#installing-tar)
   - [Installing Qv2ray](#installing-qv2ray)
   - [Setting proxy on sudo](#setting-proxy-on-sudo)
   - [Installing V2raya](#installing-v2raya)
@@ -81,6 +82,11 @@ zip -s 1g -r archivename.zip directory_name
 # Unzip a password-protected zip file to a different directory
 unzip -P PasswOrd filename.zip -d /path/to/directory
 ```
+## Installing tar
+```sh
+sudo apt install tar
+```
+
 ## Installing [Qv2ray](https://github.com/Qv2ray/Qv2ray)
 - Download [Qv2ray-v2.7.0-linux-x64.AppImage ](https://github.com/Qv2ray/Qv2ray/releases/download/v2.7.0/Qv2ray-v2.7.0-linux-x64.AppImage). 
 - Download [v2ray](https://github.com/v2fly/v2ray-core) then rename to vcore and place in `~/.config/qv2ray/`.
