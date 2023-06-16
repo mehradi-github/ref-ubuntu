@@ -461,10 +461,17 @@ All the current [themes](https://github.com/ohmyzsh/ohmyzsh/wiki/themes) can be 
 ```sh
 # ~/.zshrc
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 # echo current shell
 echo $SHELL
 # Set zsh as your default shell
 chsh -s $(which zsh)
+
+cat /etc/shells
+## find path to zsh ##
+type -a zsh 
+grep ^USER /etc/passwd
+su - USER
 
 open ~/.zshrc
 # The list of plugins: "~/.oh-my-zsh/plugins". Each plugin directory has a README file explaining what the plugin does. 
