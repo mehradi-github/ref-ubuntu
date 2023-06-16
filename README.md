@@ -8,6 +8,7 @@
   - [Installing tar](#installing-tar)
   - [Installing Qv2ray](#installing-qv2ray)
   - [Setting proxy on sudo](#setting-proxy-on-sudo)
+  - [Setting proxy on NPM](#setting-proxy-on-npm)
   - [Installing V2raya](#installing-v2raya)
   - [Installing Microsoft fonts](#installing-microsoft-fonts)
   - [Installing Docker](#installing-docker)
@@ -131,7 +132,18 @@ unset all_proxy && unset ALL_PROXY
 ```
 
 
+## Setting proxy on NPM
+```sh
+npm config set proxy http://username:password@host:port
+npm config set https-proxy http://username:password@host:port
+# example
+npm config set proxy http://127.0.0.1:8889/
+npm config set https-proxy http://127.0.0.1:8889/
+# Or you can edit directly your ~/.npmrc file:
+proxy=http://127.0.0.1:8889/
+https-proxy=http://127.0.0.1:8889/
 
+```
 
 
 ## Installing [V2raya](https://v2raya.org/en/docs/prologue/installation/debian/)
