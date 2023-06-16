@@ -426,6 +426,8 @@ echo "${BASH_VERSION}"
 bash --version
 Ctrl+x Ctrl+v
 
+# logout in /bin/bash
+gnome-session-quit --logout --no-prompt
 ```
 
 ## Modifing style properties of GNOME Shell themes
