@@ -2,6 +2,7 @@
 
 - [Tips to do on fresh install of ubuntu desktop](#tips-to-do-on-fresh-install-of-ubuntu-desktop)
   - [Install and upgrade packages](#install-and-upgrade-packages)
+  - [Adding PPA using APT](#adding-ppa-using-apt)
   - [Installing Git](#installing-git)
   - [Enabling AppImage Support in Ubuntu](#enabling-appimage-support-in-ubuntu)
   - [Installing rar/unrar](#installing-rarunrar)
@@ -41,6 +42,16 @@ sudo apt list --upgradable
 # Updating only on package
 sudo apt --only-upgrade install ppp
 man apt
+```
+## Adding PPA using APT
+```sh
+# Add
+sudo add-apt-repository ppa:PPA_Name/ppa
+
+# Remove
+sudo add-apt-repository --remove ppa:PPA_Name/ppa
+# OR
+sudo rm -i /etc/apt/sources.list.d/PPA_Name.list
 ```
 ## Installing Git
 ```sh 
