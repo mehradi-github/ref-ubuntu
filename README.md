@@ -1,6 +1,7 @@
 # Tips to do on fresh install of ubuntu desktop
 
 - [Tips to do on fresh install of ubuntu desktop](#tips-to-do-on-fresh-install-of-ubuntu-desktop)
+  - [Install and upgrade packages](#install-and-upgrade-packages)
   - [Installing Git](#installing-git)
   - [Enabling AppImage Support in Ubuntu](#enabling-appimage-support-in-ubuntu)
   - [Installing rar/unrar](#installing-rarunrar)
@@ -31,7 +32,16 @@
   - [Zsh](#zsh)
     - [Oh my zsh](#oh-my-zsh)
 
-
+## Install and upgrade packages
+```sh
+# Installing package
+sudo apt install ppp
+# Checking upgradable list of packages
+sudo apt list --upgradable
+# Updating only on package
+sudo apt --only-upgrade install ppp
+man apt
+```
 ## Installing Git
 ```sh 
 sudo apt update && sudo apt upgrade
