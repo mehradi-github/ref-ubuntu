@@ -450,6 +450,10 @@ EOF
 
 echo "export PATH=/usr/local/lib/node/v18.16.0/bin:$PATH" >> ~/.bash_profile
 source ~/.bash_profile
+
+#Zsh
+vi ~/.zshrc
+export PATH=/usr/local/lib/node/v18.16.0/bin:$HOME/bin:/usr/local/bin:$PATH
 # ---
 
 
