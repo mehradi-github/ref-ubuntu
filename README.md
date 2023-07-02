@@ -4,6 +4,8 @@
   - [Install and upgrade packages](#install-and-upgrade-packages)
   - [Adding PPA using APT](#adding-ppa-using-apt)
   - [Installing Git](#installing-git)
+  - [Installing necessary packages](#installing-necessary-packages)
+  - [Changing TimeOut in GRUB](#changing-timeout-in-grub)
   - [Enabling AppImage Support in Ubuntu](#enabling-appimage-support-in-ubuntu)
   - [Installing rar/unrar](#installing-rarunrar)
   - [Installing zip/unzip](#installing-zipunzip)
@@ -59,6 +61,19 @@ sudo apt update && sudo apt upgrade
 sudo apt install git
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
+
+```
+## Installing necessary packages
+```sh
+sudo apt install vim
+
+```
+## Changing TimeOut in GRUB
+```sh
+sudo vi /etc/default/grub
+# Change lines
+GRUB_TIMEOUT_STYLE=menu
+GRUB_TIMEOUT=3
 
 ```
 
