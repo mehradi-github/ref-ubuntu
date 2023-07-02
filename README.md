@@ -484,8 +484,12 @@ sudo apt install gnome-shell-extensions gnome-tweaks
 ```
 ### Generating custom theme and changing panel background color
 ```sh
+
 mkdir -p ~/.themes/mytheme/gnome-shell/
 echo "#panel {background-color: red;}" > ~/.themes/mytheme/gnome-shell/gnome-shell.css
+# Installing extension > GNOME Shell integration
+# https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep
+# Go to https://extensions.gnome.org/extension/19/user-themes/ and enable user-themes
 # Launch the Tweaks app and change the GS theme from the “Appearance” tab to Mytheme
 # Reload the GNOME shell: <ALT+F2> and input “r” 
 ```
