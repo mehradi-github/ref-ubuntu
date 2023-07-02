@@ -73,7 +73,9 @@ sudo apt install vim
 sudo apt install flatpak    
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak remotes
-
+# Installing bottles
+flatpak install flathub com.usebottles.bottles
+flatpak run com.usebottles.bottles
 ```
 ## Changing TimeOut in GRUB
 ```sh
