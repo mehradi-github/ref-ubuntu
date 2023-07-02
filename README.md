@@ -75,6 +75,8 @@ sudo vi /etc/default/grub
 GRUB_TIMEOUT_STYLE=menu
 GRUB_TIMEOUT=3
 
+sudo update-grub
+
 ```
 
 ## Enabling AppImage Support in Ubuntu
