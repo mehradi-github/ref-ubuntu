@@ -5,6 +5,7 @@
   - [Adding PPA using APT](#adding-ppa-using-apt)
   - [Installing Git](#installing-git)
   - [Installing necessary packages](#installing-necessary-packages)
+  - [Installing flatpak](#installing-flatpak)
   - [Changing TimeOut in GRUB](#changing-timeout-in-grub)
   - [Enabling AppImage Support in Ubuntu](#enabling-appimage-support-in-ubuntu)
   - [Installing rar/unrar](#installing-rarunrar)
@@ -66,6 +67,12 @@ git config --global user.name "Your Name"
 ## Installing necessary packages
 ```sh
 sudo apt install vim
+```
+## Installing flatpak
+```sh
+sudo apt install flatpak    
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak remotes
 
 ```
 ## Changing TimeOut in GRUB
