@@ -57,7 +57,8 @@ sudo add-apt-repository --remove ppa:PPA_Name/ppa
 sudo rm -i /etc/apt/sources.list.d/PPA_Name.list
 ```
 ## Installing Git
-```sh 
+
+```sh
 sudo apt update && sudo apt upgrade
 sudo apt install git
 git config --global user.email "you@example.com"
@@ -138,6 +139,7 @@ tar -czvf logs_archive.tar.gz *
 
 # Extract from a compressed file
 tar -zxvf logs_archive.tar.gz -C ./log
+tar -xJvf logs_archive.tar.xz -C ./log
 ```
 
 ## Installing [Qv2ray](https://github.com/Qv2ray/Qv2ray)
