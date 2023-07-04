@@ -14,6 +14,7 @@
   - [Installing Qv2ray](#installing-qv2ray)
   - [Setting proxy on sudo](#setting-proxy-on-sudo)
   - [Setting proxy on NPM](#setting-proxy-on-npm)
+  - [Installing pnpm](#installing-pnpm)
   - [Installing V2raya](#installing-v2raya)
   - [Installing Microsoft fonts](#installing-microsoft-fonts)
   - [Installing Docker](#installing-docker)
@@ -194,7 +195,14 @@ proxy=http://127.0.0.1:8889/
 https-proxy=http://127.0.0.1:8889/
 
 ```
+## Installing pnpm
+```sh 
+sudo chown -R root:$(whoami) /usr/local/lib/node_modules/
+sudo chmod -R 775 /usr/local/lib/node_modules/
 
+corepack enable
+corepack prepare pnpm@latest --activate
+```
 
 ## Installing [V2raya](https://v2raya.org/en/docs/prologue/installation/debian/)
 
