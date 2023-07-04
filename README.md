@@ -35,6 +35,7 @@
     - [Extracting original CSS file as a reference](#extracting-original-css-file-as-a-reference)
   - [Zsh](#zsh)
     - [Oh my zsh](#oh-my-zsh)
+  - [Changing Defualt Shell](#changing-defualt-shell)
 
 ## Install and upgrade packages
 ```sh
@@ -551,4 +552,18 @@ plugins=(rails git textmate ruby lighthouse)
 ZSH_THEME="robbyrussell"
 # Apply your changes
 source ~/.zshrc
+```
+## Changing Defualt Shell
+```sh
+# List of Shells
+cat /etc/shells
+
+# Change Shell
+chsh -s /bin/zsh
+# Then logout
+
+# Check
+grep "^${USER}" /etc/passwd
+
+su - USER
 ```
