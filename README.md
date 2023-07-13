@@ -274,6 +274,9 @@ waydroid show-full-ui
 ```sh
 # Installing F-Droid
 waydroid app install ./F-Droid.apk
+
+# Setting up a shared folder
+sudo mount --bind ~/Documents ~/.local/share/waydroid/data/media/0/Documents
 ```
 
 ## Installing Microsoft fonts
