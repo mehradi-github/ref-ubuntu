@@ -16,6 +16,7 @@
   - [Setting proxy on NPM](#setting-proxy-on-npm)
   - [Installing pnpm](#installing-pnpm)
   - [Installing V2raya](#installing-v2raya)
+  - [Enabling wayland](#enabling-wayland)
   - [Installing Microsoft fonts](#installing-microsoft-fonts)
   - [Installing Docker](#installing-docker)
   - [Setting proxy on Docker](#setting-proxy-on-docker)
@@ -39,6 +40,7 @@
   - [Changing Defualt Shell](#changing-defualt-shell)
 
 ## Install and upgrade packages
+
 ```sh
 # Installing package
 sudo apt install ppp
@@ -48,7 +50,9 @@ sudo apt list --upgradable
 sudo apt --only-upgrade install ppp
 man apt
 ```
+
 ## Adding PPA using APT
+
 ```sh
 # Add
 sudo add-apt-repository ppa:PPA_Name/ppa
@@ -58,6 +62,7 @@ sudo add-apt-repository --remove ppa:PPA_Name/ppa
 # OR
 sudo rm -i /etc/apt/sources.list.d/PPA_Name.list
 ```
+
 ## Installing Git
 
 ```sh
@@ -67,20 +72,26 @@ git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 
 ```
+
 ## Installing necessary packages
+
 ```sh
 sudo apt install vim
 ```
+
 ## Installing flatpak
+
 ```sh
-sudo apt install flatpak    
+sudo apt install flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak remotes
 # Installing bottles
 flatpak install flathub com.usebottles.bottles
 flatpak run com.usebottles.bottles
 ```
+
 ## Changing TimeOut in GRUB
+
 ```sh
 sudo vi /etc/default/grub
 # Change lines
@@ -92,10 +103,13 @@ sudo update-grub
 ```
 
 ## Enabling AppImage Support in Ubuntu
+
 ```sh
 sudo apt install libfuse2
 ```
+
 ## Installing rar/unrar
+
 ```sh
 sudo apt install rar unrar
 
@@ -105,7 +119,7 @@ rar a -p dir.rar dir1
 
 
 
-# Extract a .rar extension file in specific path 
+# Extract a .rar extension file in specific path
 unrar  e filename.rar /home/
 
 # Extract a .rar extension file in their original directory
@@ -119,7 +133,9 @@ man unrar
 man rar
 
 ```
+
 ## Installing zip/unzip
+
 ```sh
 sudo apt install zip unzip
 
@@ -133,7 +149,9 @@ zip -s 1g -r archivename.zip directory_name
 # Unzip a password-protected zip file to a different directory
 unzip -P PasswOrd filename.zip -d /path/to/directory
 ```
+
 ## Installing tar
+
 ```sh
 sudo apt install tar
 # Compress Files
@@ -145,9 +163,10 @@ tar -xJvf logs_archive.tar.xz -C ./log
 ```
 
 ## Installing [Qv2ray](https://github.com/Qv2ray/Qv2ray)
-- Download [Qv2ray-v2.7.0-linux-x64.AppImage ](https://github.com/Qv2ray/Qv2ray/releases/download/v2.7.0/Qv2ray-v2.7.0-linux-x64.AppImage). 
+
+- Download [Qv2ray-v2.7.0-linux-x64.AppImage ](https://github.com/Qv2ray/Qv2ray/releases/download/v2.7.0/Qv2ray-v2.7.0-linux-x64.AppImage).
 - Download [v2ray](https://github.com/v2fly/v2ray-core) then rename to vcore and place in `~/.config/qv2ray/`.
-- Download [QvPlugin-Trojan](https://github.com/Qv2ray/QvPlugin-Trojan/releases) and place in ` ~/.config/qv2ray/plugins `.
+- Download [QvPlugin-Trojan](https://github.com/Qv2ray/QvPlugin-Trojan/releases) and place in `~/.config/qv2ray/plugins`.
 
 ```sh
 sudo chmod u+x Qv2ray-v2.7.0-linux-x64.AppImage
@@ -176,14 +195,14 @@ Defaults env_keep += "no_proxy NO_PROXY http_proxy HTTP_PROXY https_proxy HTTPS_
 . ~/.bashrc
 
 # manual set var
-export all_proxy=socks5://127.0.0.1:20170/ 
+export all_proxy=socks5://127.0.0.1:20170/
 export ALL_PROXY=socks5://127.0.0.1:20170/
 # manual unset var
 unset all_proxy && unset ALL_PROXY
 ```
 
-
 ## Setting proxy on NPM
+
 ```sh
 npm config set proxy http://username:password@host:port
 npm config set https-proxy http://username:password@host:port
@@ -195,8 +214,10 @@ proxy=http://127.0.0.1:8889/
 https-proxy=http://127.0.0.1:8889/
 
 ```
+
 ## Installing pnpm
-```sh 
+
+```sh
 sudo chown -R root:$(whoami) /usr/local/lib/node_modules/
 sudo chmod -R 775 /usr/local/lib/node_modules/
 
@@ -215,14 +236,24 @@ sudo systemctl enable v2raya.service
 sudo systemctl start v2raya.service
 ```
 
+## Enabling wayland
+
+[Wayland](https://wayland.freedesktop.org/)is a replacement for the X11 window system protocol and architecture with the aim to be easier to develop, extend, and maintain.
+
+```sh
+sudo vi /etc/gdm3/custom.conf
+WaylandEnable=true
+sudo systemctl restart gdm3
+```
+
 ## Installing Microsoft fonts
+
 ```sh
 sudo add-apt-repository multiverse
 sudo apt update && sudo apt install ttf-mscorefonts-installer
 ```
 
 ## Installing [Docker](https://docs.docker.com/engine/install/ubuntu/)
-
 
 ```sh
 # Install packages to allow apt to use a repository over HTTPS
@@ -239,16 +270,18 @@ echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-  
+
   sudo apt-get update
-  
+
   # Install Docker Engine, containerd, and Docker Compose.
-  
+
   sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
   sudo docker run hello-world
-  
+
 ```
+
 ## Setting proxy on Docker
+
 ```sh
 vi ~/.docker/config.json
 {
@@ -265,25 +298,33 @@ vi ~/.docker/config.json
 ```
 
 ## Installing Vscode
+
 Download latest package [vscode](https://code.visualstudio.com/download):
+
 ```sh
 sudo apt install ./code_1.78.0-1683145611_amd64.deb
 ```
+
 ## Installing Bing wallpaper
+
 ```sh
 sudo snap install bing-wall
 ```
 
 ## Installing Pomodoro
+
 ```sh
 sudo snap install pomatez
 ```
+
 ## Fixing error: download is performed unsandboxed as root...
+
 ```sh
-sudo chown -Rv _apt:root /var/cache/apt/archives/partial/ 
+sudo chown -Rv _apt:root /var/cache/apt/archives/partial/
 sudo chmod -Rv 700 /var/cache/apt/archives/partial/
 # sudo apt autoremove
 ```
+
 ## Instaling [TLP](https://linrunner.de/tlp/index.html)
 
 ```sh
@@ -291,7 +332,7 @@ sudo add-apt-repository ppa:linrunner/tlp
 sudo apt update
 sudo apt install tlp tlp-rdw
 
-vi /etc/tlp.conf 
+vi /etc/tlp.conf
 #(or a config file of your choice under /etc/tlp.d/):
 # example: conservation_mode = 1 > charging stops at 60% | conservation_mode = 0 > the battery gets fully charged (Lenovo Ideapad)
 STOP_CHARGE_THRESH_BAT0="1"
@@ -304,6 +345,7 @@ tlp-stat -s -c -b
 ```
 
 ## Forwarding all traffic from ssh ([sshuttle](https://github.com/sshuttle/sshuttle))
+
 ```sh
 sudo apt install sshuttle
 sudo sshuttle -r username@sshserver 0/0 --dns
@@ -384,8 +426,7 @@ minikube delete --all
 minikube delete --purge
 ```
 
-
-## Installing [MicroK8s](https://microk8s.io/docs/getting-started) 
+## Installing [MicroK8s](https://microk8s.io/docs/getting-started)
 
 ```sh
 # Installing MicroK8s
@@ -400,10 +441,10 @@ su - $USER
 # Checking the status
 microk8s status --wait-ready
 
-# WARNING:  Docker is installed. 
+# WARNING:  Docker is installed.
 sudo vi /etc/docker/daemon.json
 {
-    "insecure-registries" : ["localhost:32000"] 
+    "insecure-registries" : ["localhost:32000"]
 }
 
 
@@ -424,18 +465,20 @@ microk8s start
 
 # Enabling traffic forwarding with:
 sudo iptables -P FORWARD ACCEPT
-# The change can be made persistent with: 
+# The change can be made persistent with:
 sudo apt-get install iptables-persistent
 
 ```
 
 ## Install inside virtual environment:
+
 1. cd DIR
 2. pipenv install (installs virtual environment and all necessary dependencies from Pipfile).
 3. pipenv shell (enter virtual environment).
 4. pip install -e . (to install).
 
 ## Installing Brave browser
+
 ```sh
 sudo apt install curl
 
@@ -447,7 +490,9 @@ sudo apt update
 
 sudo apt install brave-browser
 ```
+
 ## Installing Node.js LTS via binary archive
+
 Download the NodeJS : [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 
 ```sh
@@ -461,7 +506,7 @@ sudo cp -r ./node-v18.16.0-linux-x64/{lib,share,include,bin} /usr
 # --- The second method
 sudo mkdir -p /usr/local/lib/node/v18.16.0
 sudo mv ./node-v18.16.0-linux-x64/{lib,share,include,bin} /usr/local/lib/node/v18.16.0
-# Checking ~/.bashrc 
+# Checking ~/.bashrc
 cat <<EOF >> ~/.bashrc
 if [ -f ~/.bash_profile ]; then
     . ~/.bash_profile
@@ -480,7 +525,9 @@ export PATH=/usr/local/lib/node/v18.16.0/bin:$HOME/bin:/usr/local/bin:$PATH
 node -v
 npm version
 ```
-## Tips 
+
+## Tips
+
 ```sh
 # Copy just structure folders
 rsync -av -f"+ */" --exclude={'*.srt','*.mp4'} "$SRC" "$DEST"
@@ -505,10 +552,13 @@ gnome-session-quit --logout --no-prompt
 ```
 
 ## Modifing style properties of GNOME Shell themes
+
 ```sh
 sudo apt install gnome-shell-extensions gnome-tweaks
 ```
+
 ### Generating custom theme and changing panel background color
+
 ```sh
 
 mkdir -p ~/.themes/mytheme/gnome-shell/
@@ -517,16 +567,20 @@ echo "#panel {background-color: red;}" > ~/.themes/mytheme/gnome-shell/gnome-she
 # https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep
 # Go to https://extensions.gnome.org/extension/19/user-themes/ and enable user-themes
 # Launch the Tweaks app and change the GS theme from the “Appearance” tab to Mytheme
-# Reload the GNOME shell: <ALT+F2> and input “r” 
+# Reload the GNOME shell: <ALT+F2> and input “r”
 ```
+
 ### Extracting original CSS file as a reference
+
 ```sh
 # default system GS theme located at the “/usr/share/gnome-shell/theme” path
 cd /usr/share/gnome-shell/theme/Yaru
 gresource list gnome-shell-theme.gresource
 gresource extract gnome-shell-theme.gresource /org/gnome/shell/theme/Yaru/gnome-shell-dark.css > output.css
 ```
+
 ## Zsh
+
 [Zsh](https://www.zsh.org/) is a shell designed for interactive use, although it is also a powerful scripting language.
 
 ```sh
@@ -534,10 +588,13 @@ gresource extract gnome-shell-theme.gresource /org/gnome/shell/theme/Yaru/gnome-
 sudo apt install zsh
 zsh
 ```
-### Oh my zsh 
+
+### Oh my zsh
+
 [Oh My Zsh](https://ohmyz.sh/#install) is a delightful, open source, community-driven framework for managing your Zsh configuration. It comes bundled with thousands of helpful functions, helpers, plugins, themes, and a few things that make you shout...
 
 All the current [themes](https://github.com/ohmyzsh/ohmyzsh/wiki/themes) can be found in the themes/ directory in the Oh My Zsh distribution. [See list here](https://github.com/robbyrussell/oh-my-zsh/tree/master/themes/).
+
 ```sh
 # ~/.zshrc
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -549,19 +606,21 @@ chsh -s $(which zsh)
 
 cat /etc/shells
 ## find path to zsh ##
-type -a zsh 
+type -a zsh
 grep ^USER /etc/passwd
 su - USER
 
 open ~/.zshrc
-# The list of plugins: "~/.oh-my-zsh/plugins". Each plugin directory has a README file explaining what the plugin does. 
+# The list of plugins: "~/.oh-my-zsh/plugins". Each plugin directory has a README file explaining what the plugin does.
 plugins=(rails git textmate ruby lighthouse)
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 # Apply your changes
 source ~/.zshrc
 ```
+
 ## Changing Defualt Shell
+
 ```sh
 # List of Shells
 cat /etc/shells
