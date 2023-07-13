@@ -17,6 +17,7 @@
   - [Installing pnpm](#installing-pnpm)
   - [Installing V2raya](#installing-v2raya)
   - [Enabling wayland](#enabling-wayland)
+  - [Installing Waydroid](#installing-waydroid)
   - [Installing Microsoft fonts](#installing-microsoft-fonts)
   - [Installing Docker](#installing-docker)
   - [Setting proxy on Docker](#setting-proxy-on-docker)
@@ -250,6 +251,22 @@ sudo systemctl restart gdm3
 
 ```sh
 ls $XDG_RUNTIME_DIR/wayland-*
+```
+
+## Installing Waydroid
+
+[Waydroid](https://docs.waydro.id/)is a container-based approach to boot a full Android system on a regular GNU/Linux system like Ubuntu.
+
+```sh
+sudo apt install curl ca-certificates -y
+curl https://repo.waydro.id | sudo bash
+sudo apt install waydroid -y
+
+# Launch Waydroid In Full-Screen Mode
+sudo waydroid container start
+waydroid session start
+
+waydroid show-full-ui
 ```
 
 ## Installing Microsoft fonts
