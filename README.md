@@ -246,6 +246,12 @@ WaylandEnable=true
 sudo systemctl restart gdm3
 ```
 
+[Environment variables for Wayland](https://discourse.ubuntu.com/t/environment-variables-for-wayland-hackers/12750) hackers
+
+```sh
+ls $XDG_RUNTIME_DIR/wayland-*
+```
+
 ## Installing Microsoft fonts
 
 ```sh
