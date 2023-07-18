@@ -7,6 +7,7 @@
   - [Installing necessary packages](#installing-necessary-packages)
   - [Installing flatpak](#installing-flatpak)
   - [Changing TimeOut in GRUB](#changing-timeout-in-grub)
+  - [Repairing boot after install windows](#repairing-boot-after-install-windows)
   - [Enabling AppImage Support in Ubuntu](#enabling-appimage-support-in-ubuntu)
   - [Installing rar/unrar](#installing-rarunrar)
   - [Installing zip/unzip](#installing-zipunzip)
@@ -100,6 +101,20 @@ GRUB_TIMEOUT_STYLE=menu
 GRUB_TIMEOUT=3
 
 sudo update-grub
+
+```
+
+## Repairing boot after install windows
+
+[Boot-Repair](https://help.ubuntu.com/community/Boot-Repair) is a simple tool to repair frequent boot issues you may encounter in Ubuntu like when you can't boot Ubuntu after installing Windows or another Linux distribution, or when you can't boot Windows after installing Ubuntu, or when GRUB is not displayed anymore, some upgrade breaks GRUB, etc.
+
+```sh
+# Ubuntu live-USB
+sudo add-apt-repository ppa:yannubuntu/boot-repair && sudo apt update
+sudo apt install -y boot-repair && boot-repair
+
+# login windows and run cmd
+bcdedit /set {bootmgr} path \EFI\ubuntu\grubx64.efi
 
 ```
 
