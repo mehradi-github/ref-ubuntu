@@ -8,6 +8,7 @@
   - [Installing flatpak](#installing-flatpak)
   - [Changing TimeOut in GRUB](#changing-timeout-in-grub)
   - [Repairing boot after install windows](#repairing-boot-after-install-windows)
+  - [Adding swap after system installation](#adding-swap-after-system-installation)
   - [Enabling AppImage Support in Ubuntu](#enabling-appimage-support-in-ubuntu)
   - [Installing rar/unrar](#installing-rarunrar)
   - [Installing zip/unzip](#installing-zipunzip)
@@ -115,6 +116,17 @@ sudo apt install -y boot-repair && boot-repair
 
 # login windows and run cmd
 bcdedit /set {bootmgr} path \EFI\ubuntu\grubx64.efi
+
+```
+
+## Adding swap after system installation
+
+```sh
+# Adding partion's UUID in file
+sudo vi /etc/fstab
+
+# Example for find UUID
+sudo blkid /dev/sbd6
 
 ```
 
