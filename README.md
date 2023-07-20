@@ -368,6 +368,9 @@ sudo apt install ./code_1.78.0-1683145611_amd64.deb
 ## Installing Bing wallpaper
 
 ```sh
+sudo snap remove snap-store
+sudo snap install snap-store
+
 sudo snap install bing-wall
 ```
 
