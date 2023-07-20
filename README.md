@@ -79,7 +79,7 @@ git config --global user.name "Your Name"
 ## Installing necessary packages
 
 ```sh
-sudo apt install vim
+sudo apt install vim curl
 ```
 
 ## Installing flatpak
