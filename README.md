@@ -366,6 +366,23 @@ Download latest package [vscode](https://code.visualstudio.com/download):
 
 ```sh
 sudo apt install ./code_1.78.0-1683145611_amd64.deb
+
+# Setting/Unsetting proxy via env
+printenv | grep -i proxy
+
+unset all_proxy && unset ALL_PROXY && unset ftp_proxy && unset FTP_PROXY && unset http_proxy && unset HTTP_PROXY && unset https_proxy && unset HTTPS_PROXY
+
+export no_proxy=localhost,127.0.0.0/8,::1
+export NO_PROXY=localhost,127.0.0.0/8,::1
+export ftp_proxy=http://127.0.0.1:8889/
+export FTP_PROXY=http://127.0.0.1:8889/
+export https_proxy=http://127.0.0.1:8889/
+export HTTPS_PROXY=http://127.0.0.1:8889/
+export http_proxy=http://127.0.0.1:8889/
+export HTTP_PROXY=http://127.0.0.1:8889/
+export all_proxy=socks5://127.0.0.1:1089/
+export ALL_PROXY=socks5://127.0.0.1:1089/
+
 ```
 
 ## Installing Bing wallpaper
