@@ -370,7 +370,7 @@ sudo apt install ./code_1.78.0-1683145611_amd64.deb
 # Setting/Unsetting proxy via env
 printenv | grep -i proxy
 
-unset all_proxy && unset ALL_PROXY && unset ftp_proxy && unset FTP_PROXY && unset http_proxy && unset HTTP_PROXY && unset https_proxy && unset HTTPS_PROXY
+unset no_proxy && unset NO_PROXY && unset all_proxy && unset ALL_PROXY && unset ftp_proxy && unset FTP_PROXY && unset http_proxy && unset HTTP_PROXY && unset https_proxy && unset HTTPS_PROXY
 
 export no_proxy=localhost,127.0.0.0/8,::1
 export NO_PROXY=localhost,127.0.0.0/8,::1
