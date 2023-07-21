@@ -316,6 +316,9 @@ sudo apt update && sudo apt install ttf-mscorefonts-installer
 ## Installing [Docker](https://docs.docker.com/engine/install/ubuntu/)
 
 ```sh
+curl -fsSL https://get.docker.com | sh
+# OR
+
 # Install packages to allow apt to use a repository over HTTPS
 sudo apt-get update
 sudo apt-get install ca-certificates curl gnupg
