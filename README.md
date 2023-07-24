@@ -727,5 +727,7 @@ touch file1
 cat /proc/mounts | grep datastore
 mount -v |grep datastore
 
-
+# Re-mount file system in read-write mode
+mount -o remount,rw /datastore
+mount -v |grep datastore
 ```
