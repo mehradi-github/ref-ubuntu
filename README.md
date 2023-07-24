@@ -726,8 +726,13 @@ touch file1
 # check if file system is read only
 cat /proc/mounts | grep datastore
 mount -v |grep datastore
+# check file system by running fsck on its volume
+df -h /datastore
+fsck /dev/xvdf
 
 # Re-mount file system in read-write mode
 mount -o remount,rw /datastore
 mount -v |grep datastore
+
+
 ```
