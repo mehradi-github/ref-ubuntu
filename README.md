@@ -734,5 +734,10 @@ fsck /dev/xvdf
 mount -o remount,rw /datastore
 mount -v |grep datastore
 
+# lists only ext4 file systems:
+findmnt -t ext4
+# lists information about all available or the specified block devices
+lsblk
+
 
 ```
