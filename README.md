@@ -41,6 +41,7 @@
   - [Zsh](#zsh)
     - [Oh my zsh](#oh-my-zsh)
   - [Changing Defualt Shell](#changing-defualt-shell)
+  - [Remount filesystem in the read-write mode](#remount-filesystem-in-the-read-write-mode)
 
 ## Install and upgrade packages
 
@@ -716,4 +717,15 @@ chsh -s /bin/zsh
 grep "^${USER}" /etc/passwd
 
 su - USER
+```
+
+## Remount filesystem in the read-write mode
+
+```sh
+touch file1
+# check if file system is read only
+cat /proc/mounts | grep datastore
+mount -v |grep datastore
+
+
 ```
