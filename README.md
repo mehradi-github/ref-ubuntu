@@ -42,6 +42,7 @@
     - [Oh my zsh](#oh-my-zsh)
   - [Changing Defualt Shell](#changing-defualt-shell)
   - [Remount filesystem in the read-write mode](#remount-filesystem-in-the-read-write-mode)
+  - [InstallIng All Essential Media Codecs](#installing-all-essential-media-codecs)
 
 ## Install and upgrade packages
 
@@ -740,4 +741,14 @@ findmnt -t ext4
 lsblk
 
 
+```
+
+## InstallIng All Essential Media Codecs
+
+The ubuntu-restricted-extras is a software package that consists various essential software like flash plugin, unrar, gstreamer, mp4, codecs for Chromium browser in Ubuntu etc.
+
+```sh
+sudo add-apt-repository multiverse
+sudo apt update
+sudo apt install ubuntu-restricted-extras
 ```
