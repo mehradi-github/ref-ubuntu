@@ -43,6 +43,7 @@
   - [Changing Defualt Shell](#changing-defualt-shell)
   - [Remount filesystem in the read-write mode](#remount-filesystem-in-the-read-write-mode)
   - [InstallIng All Essential Media Codecs](#installing-all-essential-media-codecs)
+  - [Installing Jenkins](#installing-jenkins)
 
 ## Install and upgrade packages
 
@@ -751,4 +752,31 @@ The ubuntu-restricted-extras is a software package that consists various essenti
 sudo add-apt-repository multiverse
 sudo apt update
 sudo apt install ubuntu-restricted-extras
+```
+
+## Installing Jenkins
+
+[Jenkins](https://www.jenkins.io/doc/book/installing/linux/#debianubuntu) is a self-contained, open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software.
+
+Jenkins can be installed through native system packages, Docker, or even run standalone by any machine with a Java Runtime Environment (JRE) installed.
+
+```sh
+
+sudo apt update
+sudo apt install openjdk-17-jre
+java -version
+
+
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+
+echo 'deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/' | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+sudo apt update
+sudo apt install jenkins
+
+sudo systemctl enable --now jenkins
+sudo systemctl status jenkins
+
+# Browse to http://localhost:8080
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
