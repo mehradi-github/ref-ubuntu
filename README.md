@@ -44,6 +44,7 @@
   - [Remount filesystem in the read-write mode](#remount-filesystem-in-the-read-write-mode)
   - [InstallIng All Essential Media Codecs](#installing-all-essential-media-codecs)
   - [Installing Jenkins](#installing-jenkins)
+  - [Managing startup applications](#managing-startup-applications)
 
 ## Install and upgrade packages
 
@@ -780,3 +781,8 @@ sudo systemctl status jenkins
 # Browse to http://localhost:8080
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
+
+## Managing startup applications
+
+- press Alt+F2
+- run the gnome-session-properties command.
