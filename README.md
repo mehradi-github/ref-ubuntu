@@ -45,6 +45,7 @@
   - [InstallIng All Essential Media Codecs](#installing-all-essential-media-codecs)
   - [Installing Jenkins](#installing-jenkins)
   - [Managing startup applications](#managing-startup-applications)
+  - [Encryption/decryption via GPG](#encryptiondecryption-via-gpg)
 
 ## Install and upgrade packages
 
@@ -786,3 +787,16 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 - press Alt+F2
 - run the gnome-session-properties command.
+
+## Encryption/decryption via GPG
+
+```sh
+gpg --full-generate-key
+gpg --list-keys
+gpg --fingerprint userid
+gpg --keyserver keyserver.ubuntu.com --send-key KEY-ID
+gpg --keyserver keyserver.ubuntu.com --recv-keys KEY-ID
+
+gpg -se -r recipient textfile
+gpg -d -o outputfile textfile
+```
