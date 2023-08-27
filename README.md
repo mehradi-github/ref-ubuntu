@@ -46,6 +46,7 @@
   - [Installing Jenkins](#installing-jenkins)
   - [Managing startup applications](#managing-startup-applications)
   - [Encryption/decryption via GPG](#encryptiondecryption-via-gpg)
+  - [KeePassXC](#keepassxc)
 
 ## Install and upgrade packages
 
@@ -799,4 +800,14 @@ gpg --keyserver keyserver.ubuntu.com --recv-keys KEY-ID
 
 gpg -se -r recipient textfile
 gpg -d -o outputfile textfile
+```
+
+## KeePassXC
+
+Cross-platform Password Manager
+
+```sh
+sudo add-apt-repository ppa:phoerious/keepassxc
+sudo apt update
+sudo apt install keepassxc
 ```
