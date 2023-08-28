@@ -799,6 +799,8 @@ gpg --keyserver keyserver.ubuntu.com --send-key KEY-ID
 gpg --keyserver keyserver.ubuntu.com --recv-keys KEY-ID
 
 gpg -se -r recipient file.txt
+# --symmetric
+gpg -c file.txt
 
 gpg -b file.txt
 gpg --verify file.txt.sig
