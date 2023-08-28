@@ -798,8 +798,16 @@ gpg --fingerprint userid
 gpg --keyserver keyserver.ubuntu.com --send-key KEY-ID
 gpg --keyserver keyserver.ubuntu.com --recv-keys KEY-ID
 
-gpg -se -r recipient textfile
-gpg -d -o outputfile textfile
+gpg -se -r recipient file.txt
+
+gpg -b file.txt
+gpg --verify file.txt.sig
+
+sha1sum file.txt
+
+gpg -d -o file.txt file.txt.gpg
+
+
 ```
 
 ## KeePassXC
