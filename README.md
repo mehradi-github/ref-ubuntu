@@ -815,7 +815,6 @@ gpg -d -o file.txt file.txt.gpg
 ## How to Back Up and Restore Your GPG Keys
 
 ```sh
-gpg -K
 tree .gnupg
 
 ```
@@ -825,6 +824,24 @@ tree .gnupg
 - pubring.kbx: It contains public keys, including yours, and some metadata about them.
 - pubring.kbx~: This is a backup copy of "pubring.kbx."
 - trustdb.gpg: This holds the trust relationships you have established for your own keys and for any accepted public keys belonging to other people.
+
+```sh
+gpg -K --keyid-format LONG
+
+```
+
+- [SC]." The "S" means the key can be used for digital signatures and the "C" means it can be used for certification.
+- The "ssb" line shows the secret subkey, when it was created, and "E." The "E" indicates it can be used for encryption.
+
+```sh
+gpg --export --export-options backup --output public.gpg
+gpg --export-secret-keys --export-options backup --output private.gpg
+gpg --export-ownertrust > trust.gpg
+
+gpg --import public.gpg
+gpg --import private.gpg
+gpg --import-ownertrust trust.gpg
+```
 
 ## KeePassXC
 
