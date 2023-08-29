@@ -820,6 +820,12 @@ gpg .gnupg
 
 ```
 
+- openpgp-revocs.d: This subdirectory contains your revocation certificate.
+- private-keys-v1.d: This subdirectory stores your private keys.
+- pubring.kbx: It contains public keys, including yours, and some metadata about them.
+- pubring.kbx~: This is a backup copy of "pubring.kbx."
+- trustdb.gpg: This holds the trust relationships you have established for your own keys and for any accepted public keys belonging to other people.
+
 ## KeePassXC
 
 Cross-platform Password Manager
