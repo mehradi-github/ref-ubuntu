@@ -834,8 +834,8 @@ gpg -K --keyid-format LONG
 - The "ssb" line shows the secret subkey, when it was created, and "E." The "E" indicates it can be used for encryption.
 
 ```sh
-gpg --export --export-options backup --output public.gpg
-gpg --export-secret-keys --export-options backup --output private.gpg
+gpg --export --export-options backup -o public.gpg
+gpg --export-secret-keys --export-options backup -o private.gpg
 gpg --export-ownertrust > trust.gpg
 
 gpg --import public.gpg
