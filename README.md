@@ -830,7 +830,9 @@ gpg -K --keyid-format LONG
 
 ```
 
-- [SC]." The "S" means the key can be used for digital signatures and the "C" means it can be used for certification.
+- The "sec" (secret) number of bits in the encryption, the key ID, the date the key was created, and "[SC]." The "S" means the key can be used for digital signatures and the "C" means it can be used for certification.
+- The next line is the key fingerprint.
+- The "uid" line holds the ID of the key's owner.
 - The "ssb" line shows the secret subkey, when it was created, and "E." The "E" indicates it can be used for encryption.
 
 ```sh
