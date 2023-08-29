@@ -47,6 +47,7 @@
   - [Managing startup applications](#managing-startup-applications)
   - [Encryption/decryption via GPG](#encryptiondecryption-via-gpg)
   - [How to Back Up and Restore Your GPG Keys](#how-to-back-up-and-restore-your-gpg-keys)
+  - [Using VeraCrypt encrypted volumes](#using-veracrypt-encrypted-volumes)
   - [KeePassXC](#keepassxc)
 
 ## Install and upgrade packages
@@ -844,6 +845,10 @@ gpg --import public.gpg
 gpg --import private.gpg
 gpg --import-ownertrust trust.gpg
 ```
+
+## Using VeraCrypt encrypted volumes
+
+[VeraCrypt](https://veracrypt.fr/en/Documentation.html) is a free open source disk encryption software for Windows, Mac OSX and Linux. Brought to you by IDRIX (https://www.idrix.fr) and based on TrueCrypt 7.1a.
 
 ## KeePassXC
 
