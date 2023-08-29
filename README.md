@@ -833,6 +833,12 @@ gpg -K --keyid-format LONG
 - [SC]." The "S" means the key can be used for digital signatures and the "C" means it can be used for certification.
 - The "ssb" line shows the secret subkey, when it was created, and "E." The "E" indicates it can be used for encryption.
 
+```sh
+gpg --export --export-options backup --output public.gpg
+gpg --export-secret-keys --export-options backup --output private.gpg
+gpg --export-ownertrust > trust.gpg
+```
+
 ## KeePassXC
 
 Cross-platform Password Manager
