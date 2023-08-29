@@ -46,6 +46,7 @@
   - [Installing Jenkins](#installing-jenkins)
   - [Managing startup applications](#managing-startup-applications)
   - [Encryption/decryption via GPG](#encryptiondecryption-via-gpg)
+  - [How to Back Up and Restore Your GPG Keys](#how-to-back-up-and-restore-your-gpg-keys)
   - [KeePassXC](#keepassxc)
 
 ## Install and upgrade packages
@@ -809,6 +810,13 @@ sha1sum file.txt
 
 gpg -d -o file.txt file.txt.gpg
 
+```
+
+## How to Back Up and Restore Your GPG Keys
+
+```sh
+gpg -K
+gpg .gnupg
 
 ```
 
