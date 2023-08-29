@@ -816,7 +816,7 @@ gpg -d -o file.txt file.txt.gpg
 
 ```sh
 gpg -K
-gpg .gnupg
+tree .gnupg
 
 ```
 
