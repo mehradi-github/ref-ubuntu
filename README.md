@@ -60,6 +60,13 @@ sudo apt install ppp
 sudo apt list --upgradable
 # Updating only on package
 sudo apt --only-upgrade install ppp
+
+# Find and display the installed packages on your system
+apt list --installed | grep -i "package-name"
+
+apt list -a <package_name>
+
+
 man apt
 ```
 
