@@ -867,6 +867,8 @@ sudo apt install keepassxc
 
 ```sh
 rclone config
-mkdir -p ~/dir1
-rclone mount crypted: ~/dri1
+rclone config file
+
+mkdir -p ~/path-local-dir
+rclone mount crypted-drive-name: ~/path-local-dir
 ```
