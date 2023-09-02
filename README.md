@@ -49,6 +49,7 @@
   - [How to Back Up and Restore Your GPG Keys](#how-to-back-up-and-restore-your-gpg-keys)
   - [Using VeraCrypt encrypted volumes](#using-veracrypt-encrypted-volumes)
   - [KeePassXC](#keepassxc)
+  - [Encrypting google drive with rclone](#encrypting-google-drive-with-rclone)
 
 ## Install and upgrade packages
 
@@ -858,4 +859,14 @@ Cross-platform Password Manager
 sudo add-apt-repository ppa:phoerious/keepassxc
 sudo apt update
 sudo apt install keepassxc
+```
+
+## Encrypting google drive with rclone
+
+[Rclone](https://rclone.org/downloads/) is a command-line program to manage files on cloud storage. It is a feature-rich alternative to cloud vendors' web storage interfaces. Over 70 cloud storage products support rclone including S3 object stores, business & consumer file storage services, as well as standard transfer protocols.
+
+```sh
+rclone config
+mkdir -p ~/dir1
+rclone mount crypted: ~/dri1
 ```
