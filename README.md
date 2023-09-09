@@ -50,6 +50,7 @@
   - [Using VeraCrypt encrypted volumes](#using-veracrypt-encrypted-volumes)
   - [KeePassXC](#keepassxc)
   - [Encrypting google drive with rclone](#encrypting-google-drive-with-rclone)
+    - [Docker installation](#docker-installation)
 
 ## Install and upgrade packages
 
@@ -878,4 +879,21 @@ rclone config file
 
 mkdir -p ~/path-local-dir
 rclone mount crypted-drive-name: ~/path-local-dir
+```
+
+### Docker installation
+
+```sh
+# perform mount inside Docker container, expose result to host
+mkdir -p ~/data/mount
+docker run --rm \
+    --volume ~/.config/rclone:/config/rclone \
+    --volume ~/data:/data:shared \
+    --user $(id -u):$(id -g) \
+    --volume /etc/passwd:/etc/passwd:ro --volume /etc/group:/etc/group:ro \
+    --device /dev/fuse --cap-add SYS_ADMIN --security-opt apparmor:unconfined \
+    rclone/rclone \
+    mount dropbox:Photos /data/mount &
+ls ~/data/mount
+kill %1
 ```
