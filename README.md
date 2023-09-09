@@ -51,6 +51,7 @@
   - [KeePassXC](#keepassxc)
   - [Encrypting google drive with rclone](#encrypting-google-drive-with-rclone)
     - [Docker installation](#docker-installation)
+    - [Source installation](#source-installation)
 
 ## Install and upgrade packages
 
@@ -896,4 +897,12 @@ docker run --rm \
     mount dropbox:Photos /data/mount &
 ls ~/data/mount
 kill %1
+```
+
+### Source installation
+
+```sh
+git clone https://github.com/rclone/rclone.git
+cd rclone
+go build
 ```
