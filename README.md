@@ -55,6 +55,7 @@
   - [Add an SSH fingerprint to your known_hosts file](#add-an-ssh-fingerprint-to-your-known_hosts-file)
     - [Generate an SSH key pair](#generate-an-ssh-key-pair)
     - [Update your SSH key passphrase](#update-your-ssh-key-passphrase)
+    - [check your SSH key fingerprint](#check-your-ssh-key-fingerprint)
   - [Create a new and push in Git repository](#create-a-new-and-push-in-git-repository)
     - [Git global setup](#git-global-setup)
     - [Create a new repository](#create-a-new-repository)
@@ -919,6 +920,8 @@ go build
 
 ### Generate an SSH key pair
 
+[SSH](https://docs.gitlab.com/ee/user/ssh.html) uses two keys, a public key and a private key.
+
 ```sh
 ssh-keygen -t ed25519 -C "<comment>"
 ```
@@ -927,6 +930,16 @@ ssh-keygen -t ed25519 -C "<comment>"
 
 ```sh
 ssh-keygen -p -f /path/to/ssh_key
+```
+
+### check your SSH key fingerprint
+
+```sh
+ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub
+
+cat .ssh/known_hosts
+ssh-keygen -R github.com
+
 ```
 
 ## Create a new and push in Git repository
