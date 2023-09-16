@@ -56,6 +56,7 @@
     - [Git global setup](#git-global-setup)
     - [Create a new repository](#create-a-new-repository)
     - [Push an existing folder](#push-an-existing-folder)
+    - [Push an existing Git repository](#push-an-existing-git-repository)
 
 ## Install and upgrade packages
 
@@ -942,5 +943,16 @@ git remote add origin git@github.com:PATH/REP.git
 git add .
 git commit -m "Initial commit"
 git push --set-upstream origin main
+
+```
+
+### Push an existing Git repository
+
+```sh
+cd existing_repo
+git remote rename origin old-origin
+git remote add origin git@github.com:PATH/REP.git
+git push --set-upstream origin --all
+git push --set-upstream origin --tags
 
 ```
