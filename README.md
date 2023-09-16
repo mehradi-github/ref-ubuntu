@@ -54,6 +54,7 @@
     - [Source installation](#source-installation)
   - [Create a new and push in Git repository](#create-a-new-and-push-in-git-repository)
     - [Git global setup](#git-global-setup)
+    - [Create a new repository](#create-a-new-repository)
 
 ## Install and upgrade packages
 
@@ -916,4 +917,17 @@ go build
 ```sh
 git config --global user.name "NAME"
 git config --global user.email "EMAIL"
+```
+
+### Create a new repository
+
+```sh
+git clone git@github.com:PATH/REP.git
+cd security
+git switch --create main
+touch README.md
+git add README.md
+git commit -m "add README"
+git push --set-upstream origin main
+
 ```
