@@ -52,6 +52,11 @@
   - [Encrypting google drive with rclone](#encrypting-google-drive-with-rclone)
     - [Docker installation](#docker-installation)
     - [Source installation](#source-installation)
+  - [Create a new and push in Git repository](#create-a-new-and-push-in-git-repository)
+    - [Git global setup](#git-global-setup)
+    - [Create a new repository](#create-a-new-repository)
+    - [Push an existing folder](#push-an-existing-folder)
+    - [Push an existing Git repository](#push-an-existing-git-repository)
 
 ## Install and upgrade packages
 
@@ -905,4 +910,49 @@ kill %1
 git clone https://github.com/rclone/rclone.git
 cd rclone
 go build
+```
+
+## Create a new and push in Git repository
+
+### Git global setup
+
+```sh
+git config --global user.name "NAME"
+git config --global user.email "EMAIL"
+```
+
+### Create a new repository
+
+```sh
+git clone git@github.com:PATH/REP.git
+cd security
+git switch --create main
+touch README.md
+git add README.md
+git commit -m "add README"
+git push --set-upstream origin main
+
+```
+
+### Push an existing folder
+
+```sh
+cd existing_folder
+git init --initial-branch=main
+git remote add origin git@github.com:PATH/REP.git
+git add .
+git commit -m "Initial commit"
+git push --set-upstream origin main
+
+```
+
+### Push an existing Git repository
+
+```sh
+cd existing_repo
+git remote rename origin old-origin
+git remote add origin git@github.com:PATH/REP.git
+git push --set-upstream origin --all
+git push --set-upstream origin --tags
+
 ```
