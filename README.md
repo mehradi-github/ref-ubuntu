@@ -52,6 +52,8 @@
   - [Encrypting google drive with rclone](#encrypting-google-drive-with-rclone)
     - [Docker installation](#docker-installation)
     - [Source installation](#source-installation)
+  - [Create a new and push in Git repository](#create-a-new-and-push-in-git-repository)
+    - [Git global setup](#git-global-setup)
 
 ## Install and upgrade packages
 
@@ -905,4 +907,13 @@ kill %1
 git clone https://github.com/rclone/rclone.git
 cd rclone
 go build
+```
+
+## Create a new and push in Git repository
+
+### Git global setup
+
+```sh
+git config --global user.name "NAME"
+git config --global user.email "EMAIL"
 ```
