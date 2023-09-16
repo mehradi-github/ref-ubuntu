@@ -54,6 +54,7 @@
     - [Source installation](#source-installation)
   - [Add an SSH fingerprint to your known_hosts file](#add-an-ssh-fingerprint-to-your-known_hosts-file)
     - [Generate an SSH key pair](#generate-an-ssh-key-pair)
+    - [Update your SSH key passphrase](#update-your-ssh-key-passphrase)
   - [Create a new and push in Git repository](#create-a-new-and-push-in-git-repository)
     - [Git global setup](#git-global-setup)
     - [Create a new repository](#create-a-new-repository)
@@ -920,6 +921,12 @@ go build
 
 ```sh
 ssh-keygen -t ed25519 -C "<comment>"
+```
+
+### Update your SSH key passphrase
+
+```sh
+ssh-keygen -p -f /path/to/ssh_key
 ```
 
 ## Create a new and push in Git repository
