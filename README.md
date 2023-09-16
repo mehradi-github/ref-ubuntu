@@ -52,6 +52,8 @@
   - [Encrypting google drive with rclone](#encrypting-google-drive-with-rclone)
     - [Docker installation](#docker-installation)
     - [Source installation](#source-installation)
+  - [Add an SSH fingerprint to your known_hosts file](#add-an-ssh-fingerprint-to-your-known_hosts-file)
+    - [Generate an SSH key pair](#generate-an-ssh-key-pair)
   - [Create a new and push in Git repository](#create-a-new-and-push-in-git-repository)
     - [Git global setup](#git-global-setup)
     - [Create a new repository](#create-a-new-repository)
@@ -910,6 +912,14 @@ kill %1
 git clone https://github.com/rclone/rclone.git
 cd rclone
 go build
+```
+
+## Add an SSH fingerprint to your known_hosts file
+
+### Generate an SSH key pair
+
+```sh
+ssh-keygen -t ed25519 -C "<comment>"
 ```
 
 ## Create a new and push in Git repository
