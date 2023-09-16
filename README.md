@@ -55,6 +55,7 @@
   - [Create a new and push in Git repository](#create-a-new-and-push-in-git-repository)
     - [Git global setup](#git-global-setup)
     - [Create a new repository](#create-a-new-repository)
+    - [Push an existing folder](#push-an-existing-folder)
 
 ## Install and upgrade packages
 
@@ -928,6 +929,18 @@ git switch --create main
 touch README.md
 git add README.md
 git commit -m "add README"
+git push --set-upstream origin main
+
+```
+
+### Push an existing folder
+
+```sh
+cd existing_folder
+git init --initial-branch=main
+git remote add origin git@github.com:PATH/REP.git
+git add .
+git commit -m "Initial commit"
 git push --set-upstream origin main
 
 ```
