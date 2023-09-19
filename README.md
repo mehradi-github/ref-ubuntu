@@ -289,6 +289,8 @@ sudo apt update
 sudo apt install v2raya
 sudo systemctl enable v2raya.service
 sudo systemctl start v2raya.service
+# Showing the list of services are active.
+systemctl list-units --type=service --state=active
 ```
 
 ## Enabling wayland
