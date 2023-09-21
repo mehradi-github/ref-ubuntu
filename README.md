@@ -61,6 +61,7 @@
     - [Create a new repository](#create-a-new-repository)
     - [Push an existing folder](#push-an-existing-folder)
     - [Push an existing Git repository](#push-an-existing-git-repository)
+  - [Installing Microsoft Edge](#installing-microsoft-edge)
 
 ## Install and upgrade packages
 
@@ -987,4 +988,16 @@ git remote add origin git@github.com:PATH/REP.git
 git push --set-upstream origin --all
 git push --set-upstream origin --tags
 
+```
+
+## Installing Microsoft Edge
+
+```sh
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-dev.list'
+sudo rm microsoft.gpg
+
+sudo apt update && sudo apt install microsoft-edge-stable
+sudo apt remove microsoft-edge-stable
 ```
