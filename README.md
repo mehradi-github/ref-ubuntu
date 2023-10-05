@@ -1026,11 +1026,8 @@ startxfce4 &
 
 sudo chmod 755 ~/.vnc/xstartup
 vncserver
-```
+# using Remmina app in clinet and connet to VNC server
 
-using Remmina app in clinet and connet to VNC server
-
-```sh
 vncserver -kill :1
 exit
 whoami
