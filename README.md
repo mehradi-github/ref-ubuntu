@@ -62,7 +62,7 @@
     - [Push an existing folder](#push-an-existing-folder)
     - [Push an existing Git repository](#push-an-existing-git-repository)
   - [Installing Microsoft Edge](#installing-microsoft-edge)
-  - [Xfce Installation](#xfce-installation)
+  - [Install Xfce VNC remote desktop on Ubuntu](#install-xfce-vnc-remote-desktop-on-ubuntu)
 
 ## Install and upgrade packages
 
@@ -1003,11 +1003,58 @@ sudo apt update && sudo apt install microsoft-edge-stable
 sudo apt remove microsoft-edge-stable
 ```
 
-## Xfce Installation
+## Install Xfce VNC remote desktop on Ubuntu
 
 ```sh
-sudo apt update && sudo apt upgrade
-sudo apt install xfce4
-reboot
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y vim xfce4 xfce4-goodies tightvncserver autocutsel
 
+sudo useradd -m -s /bin/bash USERNAME
+sudo usermod -aG sudo USERNAME
+sudo passwd USERNAME
+sudo su - USERNAME
+
+sudo vncpasswd
+
+sudo vi ~/.vnc/xstartup
+
+#!/bin/bash
+
+xrdb $HOME/.Xresources
+autocutsel -fork
+startxfce4 &
+
+sudo chmod 755 ~/.vnc/xstartup
+vncserver
+```
+
+using Remmina app in clinet and connet to VNC server
+
+```sh
+vncserver -kill :1
+exit
+whoami
+
+sudo vi /etc/systemd/system/vncserver@.service
+
+[Unit]
+Description=Start VNC server at startup
+After=syslog.target network.target
+
+[Service]
+Type=forking
+User=USERNAME
+Group=USERNAME
+WorkingDirectory=/home/USERNAME
+
+PIDFile=/home/USERNAME/.vnc/%H:%i.pid
+ExecStartPre=-/usr/bin/vncserver -kill :%i > /dev/null 2>&1
+ExecStart=/usr/bin/vncserver -depth 24 -geometry 1920x1080  :%i
+ExecStop=/usr/bin/vncserver -kill :%i
+
+[Install]
+WantedBy=multi-user.target
+
+sudo systemctl enable vncserver@1
+sudo systemctl start vncserver@1
 ```
