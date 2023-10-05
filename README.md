@@ -215,7 +215,7 @@ sudo apt install tar
 tar -czvf logs_archive.tar.gz *
 
 # Extract from a compressed file
-tar -zxvf logs_archive.tar.gz -C ./log
+tar -xzvf logs_archive.tar.gz -C ./log
 tar -xJvf logs_archive.tar.xz -C ./log
 ```
 
