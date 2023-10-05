@@ -62,6 +62,7 @@
     - [Push an existing folder](#push-an-existing-folder)
     - [Push an existing Git repository](#push-an-existing-git-repository)
   - [Installing Microsoft Edge](#installing-microsoft-edge)
+  - [Xfce Installation](#xfce-installation)
 
 ## Install and upgrade packages
 
@@ -1000,4 +1001,13 @@ sudo rm microsoft.gpg
 
 sudo apt update && sudo apt install microsoft-edge-stable
 sudo apt remove microsoft-edge-stable
+```
+
+## Xfce Installation
+
+```sh
+sudo apt update && sudo apt upgrade
+sudo apt install xfce4
+reboot
+
 ```
