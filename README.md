@@ -103,6 +103,19 @@ sudo apt install git
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 
+
+# Set proxy for git
+git config --global http.proxy http://192.168.1.34:8889/
+
+git config --global http.https://domain.com.proxy http://proxyUsername:proxyPassword@proxy.server.com:port
+# Which will result in the following in the ~/.gitconfig file:
+
+[http]
+[http "https://domain.com"]
+	proxy = http://proxyUsername:proxyPassword@proxy.server.com:port
+
+
+
 ```
 
 ## Installing necessary packages
