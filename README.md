@@ -102,8 +102,6 @@ sudo apt update && sudo apt upgrade
 sudo apt install git
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
-# remove cache
-git rm -r --cached .
 
 # Set proxy for git
 git config --global http.proxy http://192.168.1.34:8889/
@@ -115,7 +113,10 @@ git config --global http.https://domain.com.proxy http://proxyUsername:proxyPass
 [http "https://domain.com"]
 	proxy = http://proxyUsername:proxyPassword@proxy.server.com:port
 
-
+# changing .gitignore 
+git rm -r --cached .
+git add .
+git commit "new commit text"
 
 ```
 
