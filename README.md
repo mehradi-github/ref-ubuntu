@@ -113,10 +113,8 @@ git config --global http.https://domain.com.proxy http://proxyUsername:proxyPass
 [http "https://domain.com"]
 	proxy = http://proxyUsername:proxyPassword@proxy.server.com:port
 
-# changing .gitignore 
+# changing .gitignore and remove cache
 git rm -r --cached .
-git add .
-git commit "new commit text"
 
 ```
 
