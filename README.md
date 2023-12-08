@@ -412,6 +412,10 @@ docker info | grep "Root Dir"
 docker info | grep -i "Storage Driver"
 
 docker image ls
+
+docker save my_image:my_tag | gzip > my_image.tar.gz
+docker load < my_image.tar.gz
+
 docker save <imagename> -o imagename_backup_yyyymmdd.tar
 docker load < imagename_backup_yyyymmdd.tar
 
