@@ -23,6 +23,7 @@
   - [Installing Microsoft fonts](#installing-microsoft-fonts)
   - [Installing Docker](#installing-docker)
   - [Setting proxy on Docker](#setting-proxy-on-docker)
+  - [Backup / Export Docker Image](#backup--export-docker-image)
   - [Installing Vscode](#installing-vscode)
   - [Installing Bing wallpaper](#installing-bing-wallpaper)
   - [Installing Pomodoro](#installing-pomodoro)
@@ -402,6 +403,21 @@ vi ~/.docker/config.json
    }
  }
 }
+```
+
+## Backup / Export Docker Image
+
+```sh
+docker info | grep "Root Dir"
+docker info | grep -i "Storage Driver"
+
+docker image ls
+docker save <imagename> -o imagename_backup_yyyymmdd.tar
+docker load < imagename_backup_yyyymmdd.tar
+
+docker container ls
+docker export containerid -o imagename_backup_yyyymmdd.tar
+
 ```
 
 ## Installing Vscode
