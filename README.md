@@ -41,6 +41,7 @@
     - [Extracting original CSS file as a reference](#extracting-original-css-file-as-a-reference)
   - [Zsh](#zsh)
     - [Oh my zsh](#oh-my-zsh)
+    - [Adding JAVA_HOME to PATH](#adding-java_home-to-path)
   - [Changing Defualt Shell](#changing-defualt-shell)
   - [Remount filesystem in the read-write mode](#remount-filesystem-in-the-read-write-mode)
   - [InstallIng All Essential Media Codecs](#installing-all-essential-media-codecs)
@@ -764,6 +765,21 @@ plugins=(rails git textmate ruby lighthouse)
 ZSH_THEME="robbyrussell"
 # Apply your changes
 source ~/.zshrc
+```
+
+### Adding JAVA_HOME to PATH
+
+```sh
+vi ~/.zshrc
+
+# Java
+export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
+case ":$PATH:" in
+  *":$JAVA_HOME:"*) ;;
+  *) export PATH="$JAVA_HOME:$PATH" ;;
+esac
+# Java end
+
 ```
 
 ## Changing Defualt Shell
