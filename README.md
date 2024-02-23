@@ -53,6 +53,7 @@
   - [KeePassXC](#keepassxc)
   - [Encrypting google drive with rclone](#encrypting-google-drive-with-rclone)
     - [Docker installation](#docker-installation)
+      - [Uninstall Docker Engine](#uninstall-docker-engine)
     - [Source installation](#source-installation)
   - [Add an SSH fingerprint to your known_hosts file](#add-an-ssh-fingerprint-to-your-known_hosts-file)
     - [Generate an SSH key pair](#generate-an-ssh-key-pair)
@@ -959,6 +960,15 @@ docker run --rm \
     mount dropbox:Photos /data/mount &
 ls ~/data/mount
 kill %1
+```
+
+#### Uninstall Docker Engine
+
+```sh
+sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
+
+sudo rm -rf /var/lib/docker
+sudo rm -rf /var/lib/containerd
 ```
 
 ### Source installation
