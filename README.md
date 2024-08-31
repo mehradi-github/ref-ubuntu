@@ -124,7 +124,7 @@ git rm -r --cached .
 ## Installing necessary packages
 
 ```sh
-sudo apt install vim curl
+sudo apt install vim curl net-tools
 ```
 
 ## Installing flatpak
