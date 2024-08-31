@@ -149,7 +149,16 @@ GRUB_TIMEOUT=3
 sudo update-grub
 
 ```
+## Customize Dock Panel on Ubuntu
+```sh
+sudo apt install dconf-editor
 
+dconf-editor
+
+/org/gnome/shell/extensions/dash-to-dock/
+click-action: focus-minimize-or-appspread
+show-mounts: false
+```
 ## Repairing boot after install windows
 
 [Boot-Repair](https://help.ubuntu.com/community/Boot-Repair) is a simple tool to repair frequent boot issues you may encounter in Ubuntu like when you can't boot Ubuntu after installing Windows or another Linux distribution, or when you can't boot Windows after installing Ubuntu, or when GRUB is not displayed anymore, some upgrade breaks GRUB, etc.
