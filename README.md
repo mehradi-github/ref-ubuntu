@@ -7,6 +7,9 @@
   - [Installing necessary packages](#installing-necessary-packages)
   - [Installing flatpak](#installing-flatpak)
   - [Changing TimeOut in GRUB](#changing-timeout-in-grub)
+  - [Installing cobang,uget](#installing-cobanguget)
+  - [Installing WineHQ](#installing-winehq)
+  - [Customize Dock Panel on Ubuntu](#customize-dock-panel-on-ubuntu)
   - [Repairing boot after install windows](#repairing-boot-after-install-windows)
   - [Adding swap after system installation](#adding-swap-after-system-installation)
   - [Enabling AppImage Support in Ubuntu](#enabling-appimage-support-in-ubuntu)
@@ -41,7 +44,7 @@
     - [Extracting original CSS file as a reference](#extracting-original-css-file-as-a-reference)
   - [Zsh](#zsh)
     - [Oh my zsh](#oh-my-zsh)
-    - [Adding JAVA_HOME to PATH](#adding-java_home-to-path)
+    - [Adding JAVA\_HOME to PATH](#adding-java_home-to-path)
   - [Changing Defualt Shell](#changing-defualt-shell)
   - [Remount filesystem in the read-write mode](#remount-filesystem-in-the-read-write-mode)
   - [InstallIng All Essential Media Codecs](#installing-all-essential-media-codecs)
@@ -54,8 +57,9 @@
   - [Encrypting google drive with rclone](#encrypting-google-drive-with-rclone)
     - [Docker installation](#docker-installation)
       - [Uninstall Docker Engine](#uninstall-docker-engine)
+    - [Docker backup and restore images](#docker-backup-and-restore-images)
     - [Source installation](#source-installation)
-  - [Add an SSH fingerprint to your known_hosts file](#add-an-ssh-fingerprint-to-your-known_hosts-file)
+  - [Add an SSH fingerprint to your known\_hosts file](#add-an-ssh-fingerprint-to-your-known_hosts-file)
     - [Generate an SSH key pair](#generate-an-ssh-key-pair)
     - [Update your SSH key passphrase](#update-your-ssh-key-passphrase)
     - [check your SSH key fingerprint](#check-your-ssh-key-fingerprint)
@@ -124,7 +128,7 @@ git rm -r --cached .
 ## Installing necessary packages
 
 ```sh
-sudo apt install vim curl net-tools
+sudo apt install vim curl wget net-tools
 ```
 
 ## Installing flatpak
@@ -148,6 +152,27 @@ GRUB_TIMEOUT=3
 
 sudo update-grub
 
+```
+## Installing cobang,uget
+```sh
+sudo add-apt-repository ppa:ng-hong-quan/ppa
+sudo apt update
+sudo apt install cobang
+
+sudo add-apt-repository ppa:plushuang-tw/uget-stable
+sudo apt-get update
+sudo apt install uget
+
+```
+## Installing WineHQ
+[Wine](https://wiki.winehq.org/Ubuntu) enables Linux, Mac, FreeBSD, and Solaris users to run Windows applications without a copy of Microsoft Windows. Wine is free software under constant development. Other platforms may benefit as well.
+```sh
+sudo mkdir -pm755 /etc/apt/keyrings
+sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/noble/winehq-noble.sources
+sudo apt update
+	
+sudo apt install --install-recommends winehq-stable
 ```
 ## Customize Dock Panel on Ubuntu
 ```sh
@@ -652,6 +677,17 @@ sudo apt install brave-browser
 ## Installing Node.js LTS via binary archive
 
 Download the NodeJS : [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+```sh
+# installs nvm (Node Version Manager)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+# download and install Node.js (you may need to restart the terminal)
+nvm install 20
+# verifies the right Node.js version is in the environment
+node -v # should print `v20.17.0`
+# verifies the right npm version is in the environment
+npm -v # should print `10.8.2`
+```
+OR
 
 ```sh
 curl -fsSLO https://nodejs.org/dist/v18.16.0/node-v18.16.0-linux-x64.tar.xz
@@ -978,6 +1014,16 @@ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 
 sudo rm -rf /var/lib/docker
 sudo rm -rf /var/lib/containerd
+```
+### Docker backup and restore images
+```sh
+docker image save -o images.tar fe8299495988 e0c9858e10ed 
+
+
+ docker image load -i images.tar
+
+docker tag fe8299495988 node:lts-alpine3.20 
+docker tag e0c9858e10ed nginx:latest 
 ```
 
 ### Source installation
