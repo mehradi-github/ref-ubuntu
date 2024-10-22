@@ -353,6 +353,11 @@ systemctl list-units --type=service --state=active
 sudo vi /etc/gdm3/custom.conf
 WaylandEnable=true
 sudo systemctl restart gdm3
+
+# The Wayland option was still missing from the login selector
+sudo vi /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nvidia-drm.modeset=1"
+sudo update-grub
 ```
 
 [Environment variables for Wayland](https://discourse.ubuntu.com/t/environment-variables-for-wayland-hackers/12750) hackers
