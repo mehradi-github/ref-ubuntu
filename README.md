@@ -38,6 +38,7 @@
   - [Install inside virtual environment:](#install-inside-virtual-environment)
   - [Installing Brave browser](#installing-brave-browser)
   - [Installing Node.js LTS via binary archive](#installing-nodejs-lts-via-binary-archive)
+    - [nvm Commands](#nvm-commands)
   - [Tips](#tips)
   - [Modifing style properties of GNOME Shell themes](#modifing-style-properties-of-gnome-shell-themes)
     - [Generating custom theme and changing panel background color](#generating-custom-theme-and-changing-panel-background-color)
@@ -680,6 +681,34 @@ sudo apt install brave-browser
 ```
 
 ## Installing Node.js LTS via binary archive
+
+### nvm Commands
+
+```sh
+# check version
+node -v || node --version
+
+# list locally installed versions of node
+nvm ls
+
+# list remove available versions of node
+nvm ls-remote
+
+# install specific version of node
+nvm install 18.16.1
+
+# set default version of node
+nvm alias default 18.16.1
+
+# switch version of node
+nvm use 20.5.1
+
+# install latest LTS version of node (Long Term Support)
+nvm install --lts
+
+# install latest stable version of node
+nvm install stable
+```
 
 Download the NodeJS : [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 ```sh
