@@ -699,6 +699,7 @@ nvm install 18.16.1
 
 # set default version of node
 nvm alias default 18.16.1
+nvm unalias default
 
 # switch version of node
 nvm use 20.5.1
