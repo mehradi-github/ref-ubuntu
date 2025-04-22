@@ -4,6 +4,7 @@
   - [Install and upgrade packages](#install-and-upgrade-packages)
   - [Adding PPA using APT](#adding-ppa-using-apt)
   - [Installing Git](#installing-git)
+    - [Clone a subdirectory only](#clone-a-subdirectory-only)
   - [Installing necessary packages](#installing-necessary-packages)
   - [Installing flatpak](#installing-flatpak)
   - [Changing TimeOut in GRUB](#changing-timeout-in-grub)
@@ -124,6 +125,12 @@ git config --global http.https://domain.com.proxy http://proxyUsername:proxyPass
 # changing .gitignore and remove cache
 git rm -r --cached .
 
+```
+### Clone a subdirectory only
+```sh 
+git clone --depth 1 --no-checkout git@github.com:mui/material-ui.git
+sparse-checkout set packages/mui-material/src
+git checkout
 ```
 
 ## Installing necessary packages
